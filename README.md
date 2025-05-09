@@ -1,54 +1,76 @@
-# React + TypeScript + Vite
+# 🌤️ Feel the Day
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**🚀 A weather app that helps you _feel the day_ by comparing today’s temperature to yesterday’s.**
+Instead of just number, it gives you an intuitive sense of how the day feels — so you can decide what to wear without overthinking.
 
-Currently, two official plugins are available:
+We make weather-based decisions every day — but numbers alone don’t help us decide what to wear.
+“Feel the Day” closes that gap by grounding weather in personal experience. You know what yesterday felt like — now you can use that to sense today.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> You remember how yesterday felt — now you know how today compares.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Key Features (Planned)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 🔁 **Yesterday vs. Today Comparison**
+  Instantly see how today’s temperature and “feels like” conditions differ from yesterday.
+
+- 📆 **Weather Forecast**
+  View upcoming weather trends to better sense the temperature flow throughout the day.
+
+- 🌡️ **Actual vs. Feels Like Temperatures**
+  Understand the _real_ feel of the weather, not just the raw numbers.
+
+- 📍 **Location-Based Forecasts**
+  Automatically detects your location or allows manual selection via map or search.
+
+- 🎨 **Clean, Minimal Interface**
+  Designed to be scannable at a glance — so you can feel the weather, not overanalyze it.
+
+- ♿ **Accessibility**
+  Dark/light mode and full keyboard navigation for inclusive usage.
+
+- ⚙️ **User Preferences**
+  Toggle between Celsius and Fahrenheit based on your region.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React / TypeScript
+- **API**: -
+- **Styling**: -
+- **Build**: Vite
+
+---
+
+## 📦 Getting Started
+
+```bash
+git clone https://github.com/HyeinKang/feel-the-day.git
+cd feel-the-day
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📚 API
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+... To be filled in
+
+
+---
+
+## 🛠️ Future Expansions
+
+- 🌐 Multi-language support
+- 🌍 Save favorite locations
+- 👚 Clothing recommendations based on temperature shifts
+- 🔁 Build CI/CD pipeline
+- ✅ Add unit and integration tests
+
+---
+
+## ✨ Contributor
+- **Hyein Kang (@HyeinKang)**
