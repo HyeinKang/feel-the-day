@@ -3,11 +3,18 @@ import Humidity from "@/assets/icons/Humidity.svg";
 import UV from "@/assets/icons/UV.svg";
 import SunnyCloudyIcon from "@/assets/icons/SunnyCloudy.svg";
 
-const WeatherCard: React.FC = () => {
+interface WeatherCardProps {
+  coordinates: [number, number] | null;
+}
+
+const WeatherCard: React.FC<WeatherCardProps> = ({coordinates}) => {
   return (
-    <div className="absolute top-10 right-10 z-10 w-1/2 h-[600px] overflow-y-auto bg-[#ffffff80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
+    <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 overflow-y-auto bg-[#ffffff80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
         {/* Location */}
         <h2 className="text-xl text-center mb-4 font-medium">Seoul</h2>
+        {coordinates && (
+          <p className="text-sm text-center">{`[${coordinates?.join(', ')}]`}</p>
+        )}
         <p className="text-sm text-center">It is 5° higher and feels 1° higher than yesterday.</p>
         <p className="text-sm text-center">It feels higher because of high Humidity and strong UV index.</p>
 
