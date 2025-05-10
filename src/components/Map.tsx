@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useEffect, useRef } from "react";
 import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
@@ -11,75 +10,75 @@ interface MapProps {
 }
 
 const Map: React.FC<MapProps> = ({ setSelectedLngLat }) => {
-  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapboxMap | null>(null);
 
   useEffect(() => {
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN as string;
+    const accessToken = import.meta.env.VITE_MAPBOX_TOKEN as string;
 
-    if (!mapContainerRef.current || !mapboxgl.accessToken) {
+    if (!mapContainerRef.current || !accessToken) {
       console.error(
-        "Mapbox access token is missing or map container is not available",
+        "Mapbox access token is missing or map container is unavailable.",
       );
       return;
     }
 
-    // Initialize the map
-    mapRef.current = new mapboxgl.Map({
+    mapboxgl.accessToken = accessToken;
+
+    const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v12",
       center: [-79.4512, 43.6568],
       zoom: 13,
     });
 
+    mapRef.current = map;
+
     const geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
+      accessToken,
+      mapboxgl: mapboxgl as unknown as typeof import("mapbox-gl"),
     });
 
-    mapRef.current.on("load", () => {
-      // Append geocoder(searchbar) to the map
+    map.on("load", () => {
       const geocoderContainer = document.getElementById("geocoder");
-      if (geocoderContainer && mapRef.current) {
-          geocoderContainer.appendChild(geocoder.onAdd(mapRef.current));
+      if (geocoderContainer) {
+        geocoderContainer.appendChild(geocoder.onAdd(map));
       }
 
-      geocoder.on("result", (e: { result: { geometry: { coordinates: [number, number] } } }) => {
-        const [lng, lat] = e.result.geometry.coordinates;
-        setSelectedLngLat([lng, lat]);
-      });
+      geocoder.on(
+        "result",
+        (e: { result: { geometry: { coordinates: [number, number] } } }) => {
+          console.log(e.result);
+          const [lng, lat] = e.result.geometry.coordinates;
+          setSelectedLngLat([lng, lat]);
+        },
+      );
     });
 
-    // Manage controls
-    mapRef.current.scrollZoom.disable();
-    mapRef.current.addControl(new mapboxgl.NavigationControl(), "bottom-left");
+    map.scrollZoom.disable();
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
 
-    // Add geolocate control(find-my-location) to the map
-    const geolocate = new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true,
-      },
+    const geolocateControl = new mapboxgl.GeolocateControl({
+      positionOptions: { enableHighAccuracy: true },
       trackUserLocation: true,
     });
 
-    mapRef.current.addControl(geolocate, "bottom-left");
+    map.addControl(geolocateControl, "bottom-left");
 
-    // Handle map click
-    mapRef.current.on("click", (e) => {
+    map.on("click", (e) => {
       const { lng, lat } = e.lngLat;
       setSelectedLngLat([lng, lat]);
     });
 
-    geolocate.on("geolocate", (e: { coords: { longitude: number; latitude: number } }) => {
-      console.log(`lng: ${e.coords.longitude}, lat: ${e.coords.latitude}`);
+    geolocateControl.on("geolocate", (e) => {
+      console.log(
+        `lng: ${e.coords.longitude.toString()}, lat: ${e.coords.latitude.toString()}`,
+      );
     });
 
-    // Cleanup function
     return () => {
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
+      map.remove();
+      mapRef.current = null;
     };
   }, [setSelectedLngLat]);
 
