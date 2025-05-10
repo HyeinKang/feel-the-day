@@ -39,7 +39,7 @@ We make weather-based decisions every day — but numbers alone don’t help us 
 
 - **Frontend**: React / TypeScript
 - **API**: -
-- **Styling**: -
+- **Styling**: Tailwind
 - **Build**: Vite
 
 ---
