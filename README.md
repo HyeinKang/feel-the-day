@@ -69,6 +69,7 @@ npm run dev
 - 👚 Clothing recommendations based on temperature shifts
 - 🔁 Build CI/CD pipeline
 - ✅ Add unit and integration tests
+- ⚙️ Apply SSR
 
 ---
 
