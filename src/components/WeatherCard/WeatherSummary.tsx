@@ -1,34 +1,43 @@
-import { type WeatherDetail } from "@/types/weather";
+import { type CurrentWeatherCardData } from "@/types";
 
-interface WeatherSummaryProps {
-  icon: string;
-  temperature: string;
-  feelsLike: string;
-  highLow: string;
-  details: WeatherDetail[];
-}
+import WindIcon from "@/assets/icons/Wind.svg";
+import HumidityIcon from "@/assets/icons/Humidity.svg";
+import UVIcon from "@/assets/icons/UV.svg";
 
-const WeatherSummary: React.FC<WeatherSummaryProps> = ({
-  icon,
-  temperature,
+const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
+  weather,
+  iconUrl,
+  currentTemp,
   feelsLike,
-  highLow,
+  // highLow,
   details,
 }) => (
   <section className="mt-8">
     <div className="flex justify-center items-center gap-x-4 mt-4">
-      <div className="flex w-full justify-center items-center">
-        <img src={icon} alt="Weather icon" className="w-20 h-20" />
+      <div className="flex flex-col w-full justify-center items-center">
+        {/* Weather icon */}
+        <img src={iconUrl} alt="Weather icon" className="w-20 h-20" />
+        <h2>{weather[0].main}</h2>
+        {/* <h3>{weather[0].description}</h3> */}
       </div>
       <div className="flex flex-col w-full">
-        <h3 className="text-4xl">{temperature}</h3>
+        <h3 className="text-4xl">{currentTemp}</h3>
         <h3 className="text-lg">Feels like {feelsLike}</h3>
-        <p className="">{highLow}</p>
-
+        {/* <p className="">{highLow}</p> */}
         <div className="flex gap-x-6 mt-2">
           {details.map((detail, index) => (
             <div key={index} className="flex flex-col items-center">
-              <img src={detail.icon} alt={detail.label} className="w-4 h-4" />
+              <img
+                src={
+                  detail.key === "wind_speed"
+                    ? WindIcon
+                    : detail.key === "humidity"
+                      ? HumidityIcon
+                      : UVIcon
+                }
+                alt={detail.key}
+                className="w-4 h-4"
+              />
               <p className="text-sm">{detail.value}</p>
             </div>
           ))}
