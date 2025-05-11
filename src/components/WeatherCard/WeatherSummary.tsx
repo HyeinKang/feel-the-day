@@ -8,11 +8,11 @@ const WeatherSummary: React.FC = () => {
       {/* Location + Coordinates */}
       <h2 className="text-xl text-center font-medium">{locationName}</h2>
       {/* <p className="text-sm text-center">
-              It is 5° higher and feels 1° higher than yesterday.
-            </p>
-            <p className="text-sm text-center">
-              It feels higher because of high Humidity and strong UV index.
-            </p> */}
+        It is 5° higher and feels 1° higher than yesterday.
+      </p>
+      <p className="text-sm text-center">
+        It feels higher because of high Humidity and strong UV index.
+      </p> */}
     </section>
   );
 };
