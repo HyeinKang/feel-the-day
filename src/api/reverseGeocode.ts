@@ -21,7 +21,6 @@ export async function reverseGeocode(
   }
 
   const data = (await res.json()) as GeocodingResponse;
-  console.log("Reverse geocode data:", data);
 
   const place = data.features.find(
     (feature) =>
