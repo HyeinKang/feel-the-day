@@ -8,12 +8,6 @@ export interface DailyForecast {
   icon: string;
 }
 
-export interface HourlyForecast {
-  timeLabel: string;
-  temperature: string;
-  icon: string;
-}
-
 export interface CurrentWeatherCardData {
   weather: {
     id: number;
@@ -36,7 +30,9 @@ export interface DailyWeatherCardData {
 }
 
 export interface HourlyForecastCardData {
-  timeLabel: string; // "1PM", "2PM"
-  temp: string; // "22°C"
+  timeLabel: string;
+  temp: number;
+  feels_like: number;
   iconUrl: string;
+  weatherDescription: string;
 }

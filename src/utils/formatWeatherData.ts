@@ -4,6 +4,7 @@ import {
   type DailyWeatherCardData,
   type HourlyForecastCardData,
 } from "@/types";
+import { formatTimestampToLocalTimeLabel } from "@/utils/formatTime";
 
 export function formatCurrentWeather(
   apiData: OneCallWeatherResponse,
@@ -38,9 +39,11 @@ export function formatDailyForecasts(
 export function formatHourlyForecasts(
   apiData: OneCallWeatherResponse,
 ): HourlyForecastCardData[] {
-  return apiData.hourly.slice(0, 12).map((hour) => ({
-    timeLabel: new Date(hour.dt * 1000).getHours().toString() + "h",
+  return apiData.hourly.slice(0, 24).map((hour) => ({
+    timeLabel: formatTimestampToLocalTimeLabel(hour.dt),
     iconUrl: `https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`,
-    temp: `${Math.round(hour.temp).toString()}°C`,
+    weatherDescription: hour.weather[0].description,
+    temp: hour.temp,
+    feels_like: hour.feels_like,
   }));
 }
