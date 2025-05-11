@@ -1,19 +1,24 @@
-import { type DailyForecast } from "@/types/weather";
+import { type DailyWeatherCardData } from "@/types";
 
-const DailyForecastCard: React.FC<DailyForecast> = ({
+const DailyForecastCard: React.FC<DailyWeatherCardData> = ({
   dayLabel,
-  temperature,
+  temp,
   feelsLike,
-  highLow,
-  icon,
+  high,
+  low,
+  iconUrl,
 }) => (
   <div className="flex flex-col gap-y-2 items-center w-1/3">
     <h4 className="text-sm">{dayLabel}</h4>
-    <img src={icon} alt={dayLabel} className="w-12 h-12" />
-    <p className="text-xl">{temperature}</p>
+    <img src={iconUrl} alt={dayLabel} className="w-12 h-12" />
+    <p className="text-xl">{temp}</p>
     <div className="text-center">
       <p className="text-sm">Feels like {feelsLike}</p>
-      <p className="text-sm">{highLow}</p>
+      {high && low && (
+        <p className="text-sm">
+          H: {high} L: {low}
+        </p>
+      )}
     </div>
   </div>
 );

@@ -7,7 +7,8 @@ import { type Coordinates } from "@/types";
 
 function App() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  const { weatherData, isLoading, error } = useWeather(coordinates);
+  const { weatherData, yesterdayWeatherData, isLoading, error } =
+    useWeather(coordinates);
 
   return (
     <div className="flex flex-col h-screen bg-background-primary">
@@ -27,6 +28,7 @@ function App() {
           <WeatherCard
             coordinates={coordinates}
             weatherData={weatherData}
+            yesterdayWeatherData={yesterdayWeatherData}
             isLoading={isLoading}
             error={error}
           />

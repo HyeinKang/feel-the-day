@@ -1,13 +1,5 @@
 export { type Coordinates } from "./coordinates";
 
-export interface DailyForecast {
-  dayLabel: string;
-  temperature: string;
-  feelsLike: string;
-  highLow: string;
-  icon: string;
-}
-
 export interface CurrentWeatherCardData {
   weather: {
     id: number;
@@ -22,11 +14,12 @@ export interface CurrentWeatherCardData {
 }
 
 export interface DailyWeatherCardData {
-  dayLabel: string; // "Today", "Tomorrow"
+  dayLabel: string; // "Yesterday" | "Tomorrow" | "The day after tomorrow"
   iconUrl: string;
-  temp: string; // "23°C"
-  feelsLike: string; // "25°C"
-  highLow: string; // "H: 25° L: 11°"
+  temp: number;
+  feelsLike: number;
+  high: number | null;
+  low: number | null;
 }
 
 export interface HourlyForecastCardData {

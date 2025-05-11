@@ -1,4 +1,7 @@
-import { type OneCallWeatherResponse } from "@/types/api/weather";
+import {
+  type OneCallWeatherResponse,
+  type TimemachineResponse,
+} from "@/types/api/weather";
 import {
   type CurrentWeatherCardData,
   type DailyWeatherCardData,
@@ -24,16 +27,39 @@ export function formatCurrentWeather(
 
 export function formatDailyForecasts(
   apiData: OneCallWeatherResponse,
+  yesterdayWeatherData: TimemachineResponse | null,
 ): DailyWeatherCardData[] {
-  return apiData.daily.slice(0, 3).map((day) => ({
-    dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
-      weekday: "long",
-    }),
-    iconUrl: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
-    temp: `${Math.round(day.temp.day).toString()}°C`,
-    feelsLike: `${Math.round(day.feels_like.day).toString()}°C`,
-    highLow: `H: ${Math.round(day.temp.max).toString()}° L: ${Math.round(day.temp.min).toString()}°`,
-  }));
+  const dailyForecasts: DailyWeatherCardData[] = [];
+
+  // 1. If yesterday's weather data exists, format it
+  if (yesterdayWeatherData && yesterdayWeatherData.data.length > 0) {
+    const yesterday = yesterdayWeatherData.data[0];
+
+    dailyForecasts.push({
+      dayLabel: "Yesterday",
+      iconUrl: `https://openweathermap.org/img/wn/${yesterday.weather[0].icon}@2x.png`,
+      temp: yesterday.temp,
+      feelsLike: yesterday.feels_like,
+      high: null,
+      low: null,
+    });
+  }
+
+  // 2. Then format upcoming days from OneCall daily data
+  dailyForecasts.push(
+    ...apiData.daily.slice(0, 3).map((day) => ({
+      dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
+        weekday: "long",
+      }),
+      iconUrl: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
+      temp: Math.round(day.temp.day),
+      feelsLike: Math.round(day.feels_like.day),
+      high: Math.round(day.temp.max),
+      low: Math.round(day.temp.min),
+    })),
+  );
+
+  return dailyForecasts;
 }
 
 export function formatHourlyForecasts(
