@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import { useCoordinates } from "@/hooks/useCoordinates";
 import { type Coordinates } from "@/types";
 import {
-  type CurrentWeatherCardData,
-  type DailyWeatherCardData,
+  type CurrentWeatherData,
+  type DailyWeatherComparisonData,
   type HourlyForecastCardData,
 } from "@/types";
 import {
@@ -17,8 +17,8 @@ import {
   formatHourlyForecasts,
 } from "@/utils/formatWeatherData";
 
-import WeatherSummary from "./WeatherSummary";
-import DailyForecastCard from "./DailyForecastCard";
+import CurrentWeather from "./CurrentWeather";
+import DailyWeatherComparison from "./DailyWeatherComparison";
 import HourlyForecastCard from "./HourlyForecastCard";
 
 interface WeatherCardProps {
@@ -37,12 +37,12 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 }) => {
   const { locationName } = useCoordinates();
 
-  const currentWeather: CurrentWeatherCardData | null = useMemo(() => {
+  const currentWeather: CurrentWeatherData | null = useMemo(() => {
     if (!weatherData) return null;
     return formatCurrentWeather(weatherData);
   }, [weatherData]);
 
-  const dailyForecasts: DailyWeatherCardData[] = useMemo(() => {
+  const dailyWeatherComparison: DailyWeatherComparisonData[] = useMemo(() => {
     if (!weatherData) return [];
     return formatDailyForecasts(weatherData, yesterdayWeatherData);
   }, [weatherData, yesterdayWeatherData]);
@@ -74,6 +74,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   return (
     <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
+      {/* Weather Summary */}
       {/* Location + Coordinates */}
       <h2 className="text-xl text-center mb-4 font-medium">{locationName}</h2>
       {/* <p className="text-sm text-center">
@@ -83,8 +84,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         It feels higher because of high Humidity and strong UV index.
       </p> */}
 
-      {/* Weather Summary */}
-      <WeatherSummary
+      {/* Current Weather */}
+      <CurrentWeather
         weather={currentWeather.weather}
         iconUrl={currentWeather.iconUrl}
         currentTemp={currentWeather.currentTemp}
@@ -96,8 +97,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       {/* Daily Forecasts */}
       <section className="mt-8">
         <div className="flex justify-between">
-          {dailyForecasts.map((forecast, index) => (
-            <DailyForecastCard key={index} {...forecast} />
+          {dailyWeatherComparison.map((forecast, index) => (
+            <DailyWeatherComparison key={index} {...forecast} />
           ))}
         </div>
       </section>

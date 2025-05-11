@@ -3,15 +3,15 @@ import {
   type TimemachineResponse,
 } from "@/types/api/weather";
 import {
-  type CurrentWeatherCardData,
-  type DailyWeatherCardData,
+  type CurrentWeatherData,
+  type DailyWeatherComparisonData,
   type HourlyForecastCardData,
 } from "@/types";
 import { formatTimestampToLocalTimeLabel } from "@/utils/formatTime";
 
 export function formatCurrentWeather(
   apiData: OneCallWeatherResponse,
-): CurrentWeatherCardData {
+): CurrentWeatherData {
   return {
     weather: apiData.current.weather,
     currentTemp: Math.round(apiData.current.temp),
@@ -28,14 +28,14 @@ export function formatCurrentWeather(
 export function formatDailyForecasts(
   apiData: OneCallWeatherResponse,
   yesterdayWeatherData: TimemachineResponse | null,
-): DailyWeatherCardData[] {
-  const dailyForecasts: DailyWeatherCardData[] = [];
+): DailyWeatherComparisonData[] {
+  const dailyWeatherComparison: DailyWeatherComparisonData[] = [];
 
   // 1. If yesterday's weather data exists, format it
   if (yesterdayWeatherData && yesterdayWeatherData.data.length > 0) {
     const yesterday = yesterdayWeatherData.data[0];
 
-    dailyForecasts.push({
+    dailyWeatherComparison.push({
       dayLabel: "Yesterday",
       iconUrl: `https://openweathermap.org/img/wn/${yesterday.weather[0].icon}@2x.png`,
       temp: yesterday.temp,
@@ -46,7 +46,7 @@ export function formatDailyForecasts(
   }
 
   // 2. Then format upcoming days from OneCall daily data
-  dailyForecasts.push(
+  dailyWeatherComparison.push(
     ...apiData.daily.slice(0, 3).map((day) => ({
       dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
         weekday: "long",
@@ -59,7 +59,7 @@ export function formatDailyForecasts(
     })),
   );
 
-  return dailyForecasts;
+  return dailyWeatherComparison;
 }
 
 export function formatHourlyForecasts(

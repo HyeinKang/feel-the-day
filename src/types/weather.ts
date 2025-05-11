@@ -1,6 +1,6 @@
 export { type Coordinates } from "./coordinates";
 
-export interface CurrentWeatherCardData {
+export interface CurrentWeatherData {
   weather: {
     id: number;
     main: string;
@@ -13,7 +13,7 @@ export interface CurrentWeatherCardData {
   iconUrl: string;
 }
 
-export interface DailyWeatherCardData {
+export interface DailyWeatherComparisonData {
   dayLabel: string; // "Yesterday" | "Tomorrow" | "The day after tomorrow"
   iconUrl: string;
   temp: number;

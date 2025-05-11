@@ -1,4 +1,4 @@
-import { type CurrentWeatherCardData } from "@/types";
+import { type CurrentWeatherData } from "@/types";
 
 import WindIcon from "@/assets/icons/Wind.svg";
 import HumidityIcon from "@/assets/icons/Humidity.svg";
@@ -19,8 +19,7 @@ const iconMap = {
   },
 };
 
-// WeatherSummary component
-const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
+const CurrentWeather: React.FC<CurrentWeatherData> = ({
   weather,
   iconUrl,
   currentTemp,
@@ -56,4 +55,4 @@ const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
   </section>
 );
 
-export default WeatherSummary;
+export default CurrentWeather;
