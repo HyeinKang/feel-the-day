@@ -4,6 +4,22 @@ import WindIcon from "@/assets/icons/Wind.svg";
 import HumidityIcon from "@/assets/icons/Humidity.svg";
 import UVIcon from "@/assets/icons/UV.svg";
 
+const iconMap = {
+  wind_speed: {
+    icon: WindIcon,
+    iconAlt: "Wind speed",
+  },
+  humidity: {
+    icon: HumidityIcon,
+    iconAlt: "Humidity",
+  },
+  uvi: {
+    icon: UVIcon,
+    iconAlt: "UV index",
+  },
+};
+
+// WeatherSummary component
 const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
   weather,
   iconUrl,
@@ -28,14 +44,8 @@ const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
           {details.map((detail, index) => (
             <div key={index} className="flex flex-col items-center">
               <img
-                src={
-                  detail.key === "wind_speed"
-                    ? WindIcon
-                    : detail.key === "humidity"
-                      ? HumidityIcon
-                      : UVIcon
-                }
-                alt={detail.key}
+                src={iconMap[detail.key].icon}
+                alt={iconMap[detail.key].iconAlt}
                 className="w-4 h-4"
               />
               <p className="text-sm">{detail.value}</p>
