@@ -31,10 +31,9 @@ const WeatherSummary: React.FC<CurrentWeatherCardData> = ({
   <section className="mt-8">
     <div className="flex justify-center items-center gap-x-4 mt-4">
       <div className="flex flex-col w-full justify-center items-center">
-        {/* Weather icon */}
-        <img src={iconUrl} alt="Weather icon" className="w-20 h-20" />
+        {/* Weather */}
+        <img src={iconUrl} alt={weather[0].description} className="w-20 h-20" />
         <h2>{weather[0].main}</h2>
-        {/* <h3>{weather[0].description}</h3> */}
       </div>
       <div className="flex flex-col w-full">
         <h3 className="text-4xl">{currentTemp}</h3>
