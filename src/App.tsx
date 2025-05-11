@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
+import { useWeather } from "@/hooks/useWeather";
 import LocationSearchBar from "@/components/LocationSearchBar";
 import { type Coordinates } from "@/types";
 
 function App() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
+  const { weatherData, isLoading, error } = useWeather(coordinates);
 
   return (
     <div className="flex flex-col h-screen bg-background-primary">
