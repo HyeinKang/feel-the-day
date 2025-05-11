@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
-import { type Coordinates } from "@/types";
+import { useCoordinates } from "@/hooks/useCoordinates";
 
 import {
   addGeocoder,
@@ -12,12 +12,13 @@ import {
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
-const accessToken = import.meta.env.VITE_MAPBOX_TOKEN as string;
+const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 
 export function useMapbox(
   containerRef: React.RefObject<HTMLDivElement | null>,
-  setCoordinates: (coordinates: Coordinates) => void,
 ) {
+  const { setCoordinates } = useCoordinates();
+
   if (!accessToken) {
     console.error("Mapbox access token is missing.");
   }
@@ -41,9 +42,9 @@ export function useMapbox(
     mapRef.current = map;
 
     addNavigationControl(map);
-    addGeocoder(map, setCoordinates, accessToken);
-    addGeolocateControl(map, setCoordinates);
-    addMapClickHandler(map, setCoordinates);
+    addGeocoder({ map, accessToken, setCoordinates });
+    addGeolocateControl({ map, setCoordinates });
+    addMapClickHandler({ map, setCoordinates });
 
     return () => {
       map.remove();

@@ -1,15 +1,10 @@
 import React, { useRef } from "react";
-import { useMapbox } from "@/hooks/useMapbox"; // Adjust the path if needed
-import { type Coordinates } from "@/types";
+import { useMapbox } from "@/hooks/useMapbox";
 
-interface MapProps {
-  setCoordinates: (coordinates: Coordinates) => void;
-}
-
-const Map: React.FC<MapProps> = ({ setCoordinates }) => {
+const Map: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
-  useMapbox(mapContainerRef, setCoordinates);
+  useMapbox(mapContainerRef);
 
   return <div ref={mapContainerRef} className="w-full h-full" />;
 };

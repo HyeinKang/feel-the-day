@@ -2,10 +2,15 @@
 import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
 import { type Coordinates } from "@/types";
 
-export function addGeolocateControl(
-  map: MapboxMap,
-  setCoordinates: (coordinates: Coordinates) => void,
-) {
+interface GeolocateControlProps {
+  map: MapboxMap;
+  setCoordinates: (coordinates: Coordinates) => void;
+}
+
+export function addGeolocateControl({
+  map,
+  setCoordinates,
+}: GeolocateControlProps) {
   const geolocateControl = new mapboxgl.GeolocateControl({
     positionOptions: { enableHighAccuracy: true },
     trackUserLocation: true,

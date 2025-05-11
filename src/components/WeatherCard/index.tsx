@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useCoordinates } from "@/hooks/useCoordinates";
 import { type Coordinates } from "@/types";
 import {
   type CurrentWeatherCardData,
@@ -34,6 +35,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   isLoading,
   error,
 }) => {
+  const { locationName } = useCoordinates();
+
   const currentWeather: CurrentWeatherCardData | null = useMemo(() => {
     if (!weatherData) return null;
     return formatCurrentWeather(weatherData);
@@ -72,9 +75,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   return (
     <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
       {/* Location + Coordinates */}
-      <h2 className="text-xl text-center mb-4 font-medium">
-        City name: {/* {currentWeather.cityName} */}
-      </h2>
+      <h2 className="text-xl text-center mb-4 font-medium">{locationName}</h2>
       {/* <p className="text-sm text-center">
         It is 5° higher and feels 1° higher than yesterday.
       </p>

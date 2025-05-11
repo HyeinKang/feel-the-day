@@ -3,11 +3,17 @@ import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { type Coordinates } from "@/types";
 
-export function addGeocoder(
-  map: MapboxMap,
-  setCoordinates: (coordinates: Coordinates) => void,
-  accessToken: string,
-) {
+interface GeocoderProps {
+  map: MapboxMap;
+  setCoordinates: (coordinates: Coordinates) => void;
+  accessToken: string;
+}
+
+export function addGeocoder({
+  map,
+  accessToken,
+  setCoordinates,
+}: GeocoderProps) {
   if (!accessToken) {
     console.error("Mapbox access token is missing.");
   }
@@ -26,8 +32,12 @@ export function addGeocoder(
 
   geocoder.on(
     "result",
-    (e: { result: { geometry: { coordinates: [number, number] } } }) => {
-      console.log(e.result);
+    (e: {
+      result: {
+        geometry: { coordinates: [number, number] };
+        place_name: string;
+      };
+    }) => {
       const [lng, lat] = e.result.geometry.coordinates;
       setCoordinates({ lng, lat });
     },
