@@ -2,9 +2,10 @@ import { useState } from "react";
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
 import LocationSearchBar from "@/components/LocationSearchBar";
+import { type Coordinates } from "@/types";
 
 function App() {
-  const [selectedLngLat, setSelectedLngLat] = useState<[number, number] | null>(
+  const [selectedLngLat, setSelectedLngLat] = useState<Coordinates | null>(
     null,
   );
 

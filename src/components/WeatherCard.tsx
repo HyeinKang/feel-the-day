@@ -2,9 +2,10 @@ import Wind from "@/assets/icons/Wind.svg";
 import Humidity from "@/assets/icons/Humidity.svg";
 import UV from "@/assets/icons/UV.svg";
 import SunnyCloudyIcon from "@/assets/icons/SunnyCloudy.svg";
+import { type Coordinates } from "@/types";
 
 interface WeatherCardProps {
-  coordinates: [number, number] | null;
+  coordinates: Coordinates | null;
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates }) => {
@@ -13,7 +14,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates }) => {
       {/* Location */}
       <h2 className="text-xl text-center mb-4 font-medium">Seoul</h2>
       {coordinates && (
-        <p className="text-sm text-center">{`[${coordinates.join(", ")}]`}</p>
+        <p className="text-sm text-center">
+          {`Latitude: ${coordinates.lat.toFixed(2)}, Longitude: ${coordinates.lng.toFixed(2)}`}
+        </p>
       )}
       <p className="text-sm text-center">
         It is 5° higher and feels 1° higher than yesterday.
