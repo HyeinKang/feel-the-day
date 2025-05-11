@@ -27,8 +27,8 @@ const CurrentWeather: React.FC<CurrentWeatherData> = ({
   // highLow,
   details,
 }) => (
-  <section className="mt-8">
-    <div className="flex justify-center items-center gap-x-4 mt-4">
+  <section>
+    <div className="flex justify-center items-center gap-x-4">
       <div className="flex flex-col w-full justify-center items-center">
         {/* Weather */}
         <img src={iconUrl} alt={weather[0].description} className="w-20 h-20" />

@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { useCoordinates } from "@/hooks/useCoordinates";
 import { type Coordinates } from "@/types";
 import {
   type CurrentWeatherData,
@@ -17,6 +16,7 @@ import {
   formatHourlyForecasts,
 } from "@/utils/formatWeatherData";
 
+import WeatherSummary from "./WeatherSummary";
 import CurrentWeather from "./CurrentWeather";
 import DailyWeatherComparison from "./DailyWeatherComparison";
 import HourlyForecastCard from "./HourlyForecastCard";
@@ -35,8 +35,6 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   isLoading,
   error,
 }) => {
-  const { locationName } = useCoordinates();
-
   const currentWeather: CurrentWeatherData | null = useMemo(() => {
     if (!weatherData) return null;
     return formatCurrentWeather(weatherData);
@@ -73,18 +71,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   }
 
   return (
-    <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
-      {/* Weather Summary */}
-      {/* Location + Coordinates */}
-      <h2 className="text-xl text-center mb-4 font-medium">{locationName}</h2>
-      {/* <p className="text-sm text-center">
-        It is 5° higher and feels 1° higher than yesterday.
-      </p>
-      <p className="text-sm text-center">
-        It feels higher because of high Humidity and strong UV index.
-      </p> */}
-
-      {/* Current Weather */}
+    <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 flex flex-col gap-y-8 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
+      <WeatherSummary />
       <CurrentWeather
         weather={currentWeather.weather}
         iconUrl={currentWeather.iconUrl}
@@ -93,25 +81,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         // highLow={currentWeather.highLow}
         details={currentWeather.details}
       />
-
-      {/* Daily Forecasts */}
-      <section className="mt-8">
-        <div className="flex justify-between">
-          {dailyWeatherComparison.map((forecast, index) => (
-            <DailyWeatherComparison key={index} {...forecast} />
-          ))}
-        </div>
-      </section>
-
-      {/* Hourly Forecasts */}
-      <section className="mt-8">
-        <hr className="border-t border-gray-300 mb-4" />
-        <div className="flex flex-start gap-x-6 py-2 overflow-x-auto">
-          {hourlyForecasts.map((forecast, index) => (
-            <HourlyForecastCard key={index} {...forecast} />
-          ))}
-        </div>
-      </section>
+      <DailyWeatherComparison dailyWeatherComparison={dailyWeatherComparison} />
+      <HourlyForecastCard hourlyForecasts={hourlyForecasts} />
     </div>
   );
 };

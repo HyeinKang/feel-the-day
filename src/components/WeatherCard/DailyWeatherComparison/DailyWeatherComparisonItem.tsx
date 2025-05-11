@@ -1,6 +1,6 @@
 import { type DailyWeatherComparisonData } from "@/types";
 
-const DailyWeatherComparison: React.FC<DailyWeatherComparisonData> = ({
+const DailyWeatherComparisonItem: React.FC<DailyWeatherComparisonData> = ({
   dayLabel,
   temp,
   feelsLike,
@@ -23,4 +23,4 @@ const DailyWeatherComparison: React.FC<DailyWeatherComparisonData> = ({
   </div>
 );
 
-export default DailyWeatherComparison;
+export default DailyWeatherComparisonItem;
