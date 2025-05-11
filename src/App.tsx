@@ -5,9 +5,7 @@ import LocationSearchBar from "@/components/LocationSearchBar";
 import { type Coordinates } from "@/types";
 
 function App() {
-  const [selectedLngLat, setSelectedLngLat] = useState<Coordinates | null>(
-    null,
-  );
+  const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
 
   return (
     <div className="flex flex-col h-screen bg-background-primary">
@@ -22,8 +20,15 @@ function App() {
         <LocationSearchBar />
       </header>
       <main className="relative flex-grow">
-        <Map setSelectedLngLat={setSelectedLngLat} />
-        <WeatherCard coordinates={selectedLngLat} />
+        <Map setCoordinates={setCoordinates} />
+        {coordinates && (
+          <WeatherCard
+            coordinates={coordinates}
+            weatherData={weatherData}
+            isLoading={isLoading}
+            error={error}
+          />
+        )}
       </main>
       <footer className="z-10 w-full bg-white p-2 text-sm text-center">
         <p>© Feel the day, Hyein Kang</p>

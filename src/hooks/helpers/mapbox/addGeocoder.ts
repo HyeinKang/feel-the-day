@@ -5,7 +5,7 @@ import { type Coordinates } from "@/types";
 
 export function addGeocoder(
   map: MapboxMap,
-  setSelectedLngLat: (coordinates: Coordinates) => void,
+  setCoordinates: (coordinates: Coordinates) => void,
   accessToken: string,
 ) {
   if (!accessToken) {
@@ -29,7 +29,7 @@ export function addGeocoder(
     (e: { result: { geometry: { coordinates: [number, number] } } }) => {
       console.log(e.result);
       const [lng, lat] = e.result.geometry.coordinates;
-      setSelectedLngLat({ lng, lat });
+      setCoordinates({ lng, lat });
     },
   );
 }

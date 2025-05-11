@@ -16,7 +16,7 @@ const accessToken = import.meta.env.VITE_MAPBOX_TOKEN as string;
 
 export function useMapbox(
   containerRef: React.RefObject<HTMLDivElement | null>,
-  setSelectedLngLat: (coordinates: Coordinates) => void,
+  setCoordinates: (coordinates: Coordinates) => void,
 ) {
   if (!accessToken) {
     console.error("Mapbox access token is missing.");
@@ -41,15 +41,15 @@ export function useMapbox(
     mapRef.current = map;
 
     addNavigationControl(map);
-    addGeocoder(map, setSelectedLngLat, accessToken);
-    addGeolocateControl(map, setSelectedLngLat);
-    addMapClickHandler(map, setSelectedLngLat);
+    addGeocoder(map, setCoordinates, accessToken);
+    addGeolocateControl(map, setCoordinates);
+    addMapClickHandler(map, setCoordinates);
 
     return () => {
       map.remove();
       mapRef.current = null;
     };
-  }, [containerRef, setSelectedLngLat]);
+  }, [containerRef, setCoordinates]);
 
   return { mapRef };
 }

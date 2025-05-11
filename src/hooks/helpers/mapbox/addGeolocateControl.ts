@@ -4,7 +4,7 @@ import { type Coordinates } from "@/types";
 
 export function addGeolocateControl(
   map: MapboxMap,
-  setSelectedLngLat: (coordinates: Coordinates) => void,
+  setCoordinates: (coordinates: Coordinates) => void,
 ) {
   const geolocateControl = new mapboxgl.GeolocateControl({
     positionOptions: { enableHighAccuracy: true },
@@ -17,6 +17,6 @@ export function addGeolocateControl(
     const lng = e.coords.longitude;
     const lat = e.coords.latitude;
 
-    setSelectedLngLat({ lng, lat });
+    setCoordinates({ lng, lat });
   });
 }

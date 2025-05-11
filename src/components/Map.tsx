@@ -3,13 +3,13 @@ import { useMapbox } from "@/hooks/useMapbox"; // Adjust the path if needed
 import { type Coordinates } from "@/types";
 
 interface MapProps {
-  setSelectedLngLat: (coordinates: Coordinates) => void;
+  setCoordinates: (coordinates: Coordinates) => void;
 }
 
-const Map: React.FC<MapProps> = ({ setSelectedLngLat }) => {
+const Map: React.FC<MapProps> = ({ setCoordinates }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
-  useMapbox(mapContainerRef, setSelectedLngLat);
+  useMapbox(mapContainerRef, setCoordinates);
 
   return <div ref={mapContainerRef} className="w-full h-full" />;
 };
