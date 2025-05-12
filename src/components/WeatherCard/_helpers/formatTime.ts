@@ -1,14 +1,23 @@
-export function formatTimestampToLocalTimeLabel(timestamp: number): string {
+export function formatTimestampToLocalTimeLabel(
+  timestamp: number,
+  timezone: string,
+): string {
   const forecastDate = new Date(timestamp * 1000);
   const now = new Date();
 
-  const differenceInHours = Math.abs(now.getHours() - forecastDate.getHours());
-  if (differenceInHours === 0) {
+  // Get the forecast hour and current hour in the location timezone
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: timezone,
+    hour: "numeric",
+    hour12: true,
+  });
+
+  const forecastHourString = formatter.format(forecastDate);
+  const nowHourString = formatter.format(now);
+
+  if (forecastHourString === nowHourString) {
     return "Now";
   }
 
-  const hours = forecastDate.getHours() % 12 || 12;
-  const ampm = forecastDate.getHours() >= 12 ? "PM" : "AM";
-
-  return `${hours.toString()} ${ampm}`;
+  return forecastHourString; // e.g., "3 PM"
 }

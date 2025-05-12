@@ -33,7 +33,11 @@ export const CoordinatesProvider = ({
 
   return (
     <CoordinatesContext.Provider
-      value={{ coordinates, locationName, setCoordinates }}
+      value={{
+        coordinates,
+        locationName,
+        setCoordinates,
+      }}
     >
       {children}
     </CoordinatesContext.Provider>

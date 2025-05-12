@@ -69,9 +69,10 @@ export function formatDailyForecasts(
 
 export function formatHourlyForecasts(
   apiData: OneCallWeatherResponse,
+  timezone: string,
 ): HourlyForecastItemType[] {
   return apiData.hourly.slice(0, 24).map((hour) => ({
-    timeLabel: formatTimestampToLocalTimeLabel(hour.dt),
+    timeLabel: formatTimestampToLocalTimeLabel(hour.dt, timezone),
     iconUrl: `https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`,
     weatherDescription: hour.weather[0].description,
     temp: Math.round(hour.temp),

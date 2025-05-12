@@ -48,7 +48,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   const hourlyForecasts: HourlyForecastItemType[] = useMemo(() => {
     if (!weatherData) return [];
-    return formatHourlyForecasts(weatherData);
+    return formatHourlyForecasts(weatherData, weatherData.timezone);
   }, [weatherData]);
 
   const CenteredCard: React.FC<{ children: React.ReactNode }> = ({
