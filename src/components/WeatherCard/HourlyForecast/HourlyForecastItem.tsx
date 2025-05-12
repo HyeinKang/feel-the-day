@@ -21,7 +21,12 @@ export const HourlyForecastItem: React.FC<HourlyForecastItemType> = ({
   return (
     <div className="flex flex-col items-center gap-y-4 flex-shrink-0">
       <h4 className="whitespace-nowrap text-sm">{timeLabel}</h4>
-      <img src={iconUrl} alt={weatherDescription} className="w-8 h-8" />
+      <img
+        src={iconUrl}
+        alt={weatherDescription}
+        title={weatherDescription}
+        className="w-8 h-8"
+      />
       <div className="flex flex-col gap-y-1 items-center">
         <h3 className="text-md font-medium">{temperature}</h3>
         <p className="text-xs">{feelsLikeTemperature}</p>

@@ -28,7 +28,12 @@ const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
   return (
     <div className="flex flex-col gap-y-2 items-center w-1/3">
       <h4 className="text-sm">{dayLabel}</h4>
-      <img src={iconUrl} alt={dayLabel} className="w-12 h-12" />
+      <img
+        src={iconUrl}
+        alt={dayLabel}
+        title={dayLabel}
+        className="w-12 h-12"
+      />
       <p className="text-xl">{temperature}</p>
       <div className="text-center">
         <p className="text-sm">Feels like {feelsLikeTemperature}</p>

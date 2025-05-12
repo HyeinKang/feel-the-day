@@ -36,6 +36,7 @@ export const CurrentWeather: React.FC<CurrentWeatherType> = ({
           <img
             src={iconUrl}
             alt={weather[0].description}
+            title={weather[0].description}
             className="w-20 h-20"
           />
           <h2>{weather[0].main}</h2>
