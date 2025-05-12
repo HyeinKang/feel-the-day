@@ -33,6 +33,8 @@ export function useWeather(
     useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
+  const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
+
   const isLoading = isWeatherLoading || isYesterdayWeatherLoading;
 
   useEffect(() => {
@@ -88,7 +90,28 @@ export function useWeather(
       weatherController.abort();
       yesterdayController.abort();
     };
-  }, [coordinates, unitSystem]);
+  }, [coordinates, unitSystem, refreshTrigger]);
+
+  useEffect(() => {
+    const scheduleNextMinuteFetch = () => {
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const millisecondsUntilNextMinute = (60 - seconds) * 1000;
+
+      const timerId = setTimeout(() => {
+        setRefreshTrigger((prev) => prev + 1);
+        scheduleNextMinuteFetch(); // Schedule next one recursively
+      }, millisecondsUntilNextMinute);
+
+      return timerId;
+    };
+
+    const timerId = scheduleNextMinuteFetch();
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
 
   return { weatherData, yesterdayWeatherData, isLoading, error };
 }
