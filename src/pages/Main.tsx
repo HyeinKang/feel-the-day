@@ -31,7 +31,6 @@ function Main() {
           <Map />
           {coordinates && (
             <WeatherCard
-              coordinates={coordinates}
               weatherData={weatherData}
               yesterdayWeatherData={yesterdayWeatherData}
               isLoading={isLoading}

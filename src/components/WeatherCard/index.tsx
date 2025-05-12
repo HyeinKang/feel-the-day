@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 
-import { type Coordinates } from "@/types";
 import {
   type OneCallWeatherResponse,
   type TimemachineResponse,
@@ -19,7 +18,6 @@ import {
 } from "./_helpers/formatWeatherData";
 
 interface WeatherCardProps {
-  coordinates: Coordinates;
   weatherData: OneCallWeatherResponse | null;
   yesterdayWeatherData: TimemachineResponse | null;
   isLoading: boolean;
