@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { type Coordinates, type UnitSystem } from "@/types";
 import {
   type OneCallWeatherResponse,
@@ -27,29 +27,24 @@ export function useWeather(
   );
   const [yesterdayWeatherData, setYesterdayWeatherData] =
     useState<TimemachineResponse | null>(null);
-
   const [isWeatherLoading, setIsWeatherLoading] = useState<boolean>(false);
   const [isYesterdayWeatherLoading, setIsYesterdayWeatherLoading] =
     useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
-
   const isLoading = isWeatherLoading || isYesterdayWeatherLoading;
 
-  useEffect(() => {
-    if (!coordinates) {
-      setWeatherData(null);
-      setYesterdayWeatherData(null);
-      return;
-    }
+  const fetchAllWeather = useCallback(
+    async (showLoading = true) => {
+      if (!coordinates) return;
 
-    const weatherController = new AbortController();
-    const yesterdayController = new AbortController();
+      const weatherController = new AbortController();
+      const yesterdayController = new AbortController();
 
-    const fetchAllWeather = async () => {
-      setIsWeatherLoading(true);
-      setIsYesterdayWeatherLoading(true);
+      if (showLoading) {
+        setIsWeatherLoading(true);
+        setIsYesterdayWeatherLoading(true);
+      }
       setError(null);
 
       try {
@@ -79,39 +74,51 @@ export function useWeather(
           setError(handledError);
         }
       } finally {
-        setIsWeatherLoading(false);
-        setIsYesterdayWeatherLoading(false);
+        if (showLoading) {
+          setIsWeatherLoading(false);
+          setIsYesterdayWeatherLoading(false);
+        }
       }
-    };
+    },
+    [coordinates, unitSystem],
+  );
 
-    void fetchAllWeather();
+  useEffect(() => {
+    if (!coordinates) {
+      setWeatherData(null);
+      setYesterdayWeatherData(null);
+      return;
+    }
 
-    return () => {
-      weatherController.abort();
-      yesterdayController.abort();
-    };
-  }, [coordinates, unitSystem, refreshTrigger]);
+    void fetchAllWeather(true);
+  }, [coordinates, unitSystem, fetchAllWeather]);
 
   useEffect(() => {
     const scheduleNextMinuteFetch = () => {
-      const now = new Date();
-      const seconds = now.getSeconds();
-      const millisecondsUntilNextMinute = (60 - seconds) * 1000;
+      let timerId: number;
 
-      const timerId = setTimeout(() => {
-        setRefreshTrigger((prev) => prev + 1);
-        scheduleNextMinuteFetch(); // Schedule next one recursively
-      }, millisecondsUntilNextMinute);
+      const schedule = () => {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const millisecondsUntilNextMinute = (60 - seconds) * 1000;
 
-      return timerId;
+        timerId = window.setTimeout(() => {
+          void fetchAllWeather(false);
+          schedule();
+        }, millisecondsUntilNextMinute);
+      };
+
+      schedule();
+
+      return () => {
+        clearTimeout(timerId);
+      };
     };
 
-    const timerId = scheduleNextMinuteFetch();
+    const cleanup = scheduleNextMinuteFetch();
 
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, []);
+    return cleanup;
+  }, [fetchAllWeather]);
 
   return { weatherData, yesterdayWeatherData, isLoading, error };
 }
