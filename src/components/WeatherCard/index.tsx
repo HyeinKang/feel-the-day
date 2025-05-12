@@ -16,6 +16,7 @@ import {
   formatDailyForecasts,
   formatHourlyForecasts,
 } from "@/utils/formatWeatherData";
+import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
 
 import WeatherSummary from "./WeatherSummary";
 import CurrentWeather from "./CurrentWeather";
@@ -75,6 +76,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   return (
     <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 flex flex-col gap-y-8 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
+      <div className="flex justify-end items-center gap-x-4">
+        <TemperatureUnitSwitch onChange={setUnitSystem} value={unitSystem} />
+      </div>
       <WeatherSummary />
       <CurrentWeather
         weather={currentWeather.weather}
