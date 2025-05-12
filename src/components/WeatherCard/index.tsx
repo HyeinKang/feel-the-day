@@ -1,9 +1,12 @@
 import React, { useMemo } from "react";
+import { X } from "lucide-react";
 
 import {
   type OneCallWeatherResponse,
   type TimemachineResponse,
 } from "@/types/api/openWeather";
+
+import { useCoordinates } from "@/hooks/useCoordinates";
 import { useUnit } from "@/hooks/useUnit";
 import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
 
@@ -30,6 +33,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   isLoading,
   error,
 }) => {
+  const { setCoordinates } = useCoordinates();
   const { unitSystem, setUnitSystem } = useUnit();
 
   const currentWeather: CurrentWeatherType | null = useMemo(() => {
@@ -71,6 +75,17 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 flex flex-col gap-y-8 overflow-y-auto bg-[#eaeaea80] backdrop-blur-[12px] px-4 py-8 rounded-xl">
       <div className="flex justify-end items-center gap-x-4">
         <TemperatureUnitSwitch onChange={setUnitSystem} value={unitSystem} />
+        <button
+          type="button"
+          aria-label="Close"
+          title="Close"
+          className="p-2 rounded-full hover:bg-gray-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer"
+          onClick={() => {
+            setCoordinates(null);
+          }}
+        >
+          <X size={24} />
+        </button>
       </div>
       <WeatherSummary />
       <CurrentWeather
