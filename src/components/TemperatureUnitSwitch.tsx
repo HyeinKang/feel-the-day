@@ -13,7 +13,10 @@ export const TemperatureUnitSwitch: React.FC<TemperatureUnitSwitchProps> = ({
   return (
     <button
       type="button"
-      className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
+      title="Switch temperature unit"
+      aria-label="Switch temperature unit"
+      role="switch"
       onClick={() => {
         onChange(value === "metric" ? "imperial" : "metric");
       }}
