@@ -35,8 +35,7 @@ export const CurrentWeather: React.FC<CurrentWeatherType> = ({
         <div className="flex flex-col w-full justify-center items-center">
           <img
             src={iconUrl}
-            alt={weather[0].description}
-            title={weather[0].description}
+            alt={[weather[0].main, weather[0].description].join(": ")}
             className="w-20 h-20"
           />
           <h2>{weather[0].main}</h2>
@@ -58,8 +57,12 @@ export const CurrentWeather: React.FC<CurrentWeatherType> = ({
                     ? "%"
                     : undefined;
               return (
-                <div key={index} className="flex flex-col items-center">
-                  <IconComponent className="w-4 h-4" aria-label={alt} />
+                <div
+                  key={index}
+                  aria-label={alt}
+                  className="flex flex-col items-center"
+                >
+                  <IconComponent className="w-4 h-4" alt={alt} />
                   <p className="text-sm">
                     {detail.value}
                     {unit}

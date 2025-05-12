@@ -55,6 +55,7 @@ export function formatDailyForecasts(
     dailyWeatherComparison.push({
       dayLabel: "Yesterday",
       iconUrl: `https://openweathermap.org/img/wn/${yesterday.weather[0].icon}@2x.png`,
+      iconDescription: yesterday.weather[0].main,
       temp: Math.round(yesterday.temp),
       feelsLike: Math.round(yesterday.feels_like),
       high: null,
@@ -69,10 +70,12 @@ export function formatDailyForecasts(
         weekday: "long",
       }),
       iconUrl: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
+      iconDescription: day.weather[0].main,
       temp: Math.round(day.temp.day),
       feelsLike: Math.round(day.feels_like.day),
       high: Math.round(day.temp.max),
       low: Math.round(day.temp.min),
+      summery: day.summary,
     })),
   );
 
@@ -86,7 +89,7 @@ export function formatHourlyForecasts(
   return apiData.hourly.slice(0, 24).map((hour) => ({
     timeLabel: formatTimestampToLocalTimeLabel(hour.dt, timezone),
     iconUrl: `https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`,
-    weatherDescription: hour.weather[0].description,
+    weatherDescription: hour.weather[0].main,
     temp: Math.round(hour.temp),
     feels_like: Math.round(hour.feels_like),
   }));

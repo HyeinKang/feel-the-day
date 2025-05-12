@@ -76,7 +76,6 @@ const WeatherCard: React.FC = () => {
         <button
           type="button"
           aria-label="Close"
-          title="Close"
           className="p-2 rounded-full hover:bg-gray-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer"
           onClick={() => {
             setCoordinates(null);

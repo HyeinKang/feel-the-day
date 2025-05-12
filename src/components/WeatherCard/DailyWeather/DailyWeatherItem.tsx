@@ -10,6 +10,8 @@ const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
   high,
   low,
   iconUrl,
+  iconDescription,
+  summery,
 }) => {
   const { temperatureUnit } = useUnit();
 
@@ -30,8 +32,7 @@ const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
       <h4 className="text-sm">{dayLabel}</h4>
       <img
         src={iconUrl}
-        alt={dayLabel}
-        title={dayLabel}
+        alt={[iconDescription, summery].join(": ")}
         className="w-12 h-12"
       />
       <p className="text-xl">{temperature}</p>
