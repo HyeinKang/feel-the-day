@@ -8,5 +8,5 @@ export interface UnitContextType {
   unitSystem: UnitSystem;
   temperatureUnit: TemperatureUnit;
   windSpeedUnit: WindSpeedUnit;
-  setUnitSystem: (unitSystem: "metric" | "imperial") => void;
+  setUnitSystem: (unitSystem: UnitSystem) => void;
 }
