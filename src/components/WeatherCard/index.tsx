@@ -81,8 +81,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         iconUrl={currentWeather.iconUrl}
         currentTemp={currentWeather.currentTemp}
         feelsLike={currentWeather.feelsLike}
-        // highLow={currentWeather.highLow}
         details={currentWeather.details}
+        today={currentWeather.today}
       />
       <DailyWeatherComparison dailyWeatherComparison={dailyWeatherComparison} />
       <HourlyForecastCard hourlyForecasts={hourlyForecasts} />

@@ -22,6 +22,12 @@ export function formatCurrentWeather(
       { key: "uvi", value: Math.round(apiData.current.uvi) },
     ],
     iconUrl: `https://openweathermap.org/img/wn/${apiData.current.weather[0].icon}@4x.png`,
+    today: {
+      temp: {
+        max: Math.round(apiData.daily[0].temp.max),
+        min: Math.round(apiData.daily[0].temp.min),
+      },
+    },
   };
 }
 
