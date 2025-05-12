@@ -12,7 +12,7 @@ const CurrentWeather: React.FC<CurrentWeatherData> = ({
   today,
 }) => {
   const { temperatureUnit, windSpeedUnit } = useUnit();
-  const currentTemperatire = formatTemperatureWithUnit(
+  const currentTemperature = formatTemperatureWithUnit(
     currentTemp,
     temperatureUnit,
   );
@@ -40,7 +40,7 @@ const CurrentWeather: React.FC<CurrentWeatherData> = ({
           <h2>{weather[0].main}</h2>
         </div>
         <div className="flex flex-col w-full">
-          <h3 className="text-4xl">{currentTemperatire}</h3>
+          <h3 className="text-4xl">{currentTemperature}</h3>
           <h3 className="text-lg">Feels like {feelsLikeTemperature}</h3>
           <h3 className="text-sm">
             H: {highTemperature} L: {lowTemperature}
