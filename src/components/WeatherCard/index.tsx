@@ -49,22 +49,6 @@ const WeatherCard: React.FC = () => {
     return formatHourlyForecasts(weatherData, weatherData.timezone);
   }, [weatherData]);
 
-  const CenteredCard: React.FC<{ children: React.ReactNode }> = ({
-    children,
-  }) => (
-    <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 bg-white p-4 rounded-xl flex items-center justify-center">
-      {children}
-    </div>
-  );
-
-  if (isLoading) {
-    return <CenteredCard>Loading...</CenteredCard>;
-  }
-
-  if (error) {
-    return <CenteredCard>Failed to load weather: {error.message}</CenteredCard>;
-  }
-
   if (!currentWeather) {
     return null; // In case no data
   }
@@ -84,6 +68,12 @@ const WeatherCard: React.FC = () => {
           <X size={24} />
         </button>
       </div>
+      {isLoading ? (
+        <>Loading...</>
+      ) : error ? (
+        <div>Failed to load weather: {error.message}</div>
+      ) : (
+        <>
       <WeatherSummary
         locationName={locationName}
         overview={overview}
@@ -99,6 +89,8 @@ const WeatherCard: React.FC = () => {
       />
       <DailyWeather dailyWeatherComparison={dailyWeatherComparison} />
       <HourlyForecast hourlyForecasts={hourlyForecasts} />
+        </>
+      )}
     </div>
   );
 };
