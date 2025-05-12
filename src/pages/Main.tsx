@@ -1,6 +1,4 @@
 import { useCoordinates } from "@/hooks/useCoordinates";
-import { useWeather } from "@/hooks/useWeather";
-import { useUnit } from "@/hooks/useUnit";
 
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
@@ -8,11 +6,6 @@ import LocationSearchBar from "@/components/LocationSearchBar";
 
 function Main() {
   const { coordinates } = useCoordinates();
-  const { unitSystem } = useUnit();
-  const { weatherData, yesterdayWeatherData, isLoading, error } = useWeather(
-    coordinates,
-    unitSystem,
-  );
 
   return (
     <>
@@ -29,14 +22,7 @@ function Main() {
         </header>
         <main className="relative flex-grow">
           <Map />
-          {coordinates && (
-            <WeatherCard
-              weatherData={weatherData}
-              yesterdayWeatherData={yesterdayWeatherData}
-              isLoading={isLoading}
-              error={error}
-            />
-          )}
+          {coordinates && <WeatherCard />}
         </main>
         <footer className="z-10 w-full bg-white p-2 text-sm text-center">
           <p>© Feel the day, Hyein Kang</p>

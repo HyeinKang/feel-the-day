@@ -1,5 +1,6 @@
 import {
   type OneCallWeatherResponse,
+  type OverviewResponse,
   type TimemachineResponse,
 } from "@/types/api/openWeather";
 
@@ -7,6 +8,17 @@ import { type CurrentWeatherType } from "../CurrentWeather";
 import { type DailyWeatherItemType } from "../DailyWeather";
 import { type HourlyForecastItemType } from "../HourlyForecast";
 import { formatTimestampToLocalTimeLabel } from "./formatTime";
+
+export function formatOverview(apiData: OverviewResponse): string | null {
+  const { weather_overview } = apiData;
+
+  const sentences = weather_overview.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const lastSentences = sentences.slice(-2);
+
+  return (
+    weather_overview.split("Overall, ")[1]?.trim() ?? lastSentences.join(" ")
+  );
+}
 
 export function formatCurrentWeather(
   apiData: OneCallWeatherResponse,

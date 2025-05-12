@@ -1,12 +1,8 @@
 import React, { useMemo } from "react";
 import { X } from "lucide-react";
 
-import {
-  type OneCallWeatherResponse,
-  type TimemachineResponse,
-} from "@/types/api/openWeather";
-
 import { useCoordinates } from "@/hooks/useCoordinates";
+import { useWeather } from "@/hooks/useWeather";
 import { useUnit } from "@/hooks/useUnit";
 import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
 
@@ -15,26 +11,28 @@ import { CurrentWeather, type CurrentWeatherType } from "./CurrentWeather";
 import { DailyWeather, type DailyWeatherItemType } from "./DailyWeather";
 import { HourlyForecast, type HourlyForecastItemType } from "./HourlyForecast";
 import {
+  formatOverview,
   formatCurrentWeather,
   formatDailyForecasts,
   formatHourlyForecasts,
 } from "./_helpers/formatWeatherData";
 
-interface WeatherCardProps {
-  weatherData: OneCallWeatherResponse | null;
-  yesterdayWeatherData: TimemachineResponse | null;
-  isLoading: boolean;
-  error: Error | null;
-}
-
-const WeatherCard: React.FC<WeatherCardProps> = ({
-  weatherData,
-  yesterdayWeatherData,
-  isLoading,
-  error,
-}) => {
-  const { setCoordinates } = useCoordinates();
+const WeatherCard: React.FC = () => {
+  const { locationName, coordinates, setCoordinates } = useCoordinates();
   const { unitSystem, setUnitSystem } = useUnit();
+  const {
+    weatherData,
+    overviewData,
+    yesterdayWeatherData,
+    isLoading,
+    isOverviewLoading,
+    error,
+  } = useWeather(coordinates, unitSystem);
+
+  const overview: string | null = useMemo(() => {
+    if (!overviewData) return null;
+    return formatOverview(overviewData);
+  }, [overviewData]);
 
   const currentWeather: CurrentWeatherType | null = useMemo(() => {
     if (!weatherData) return null;
@@ -87,7 +85,11 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           <X size={24} />
         </button>
       </div>
-      <WeatherSummary />
+      <WeatherSummary
+        locationName={locationName}
+        overview={overview}
+        isOverviewLoading={isOverviewLoading}
+      />
       <CurrentWeather
         weather={currentWeather.weather}
         iconUrl={currentWeather.iconUrl}
