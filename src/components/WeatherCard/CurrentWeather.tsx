@@ -1,3 +1,5 @@
+import { type CurrentWeatherData } from "@/types";
+import { useUnit } from "@/hooks/useUnit";
 import { getWeatherDetailIcon } from "@/utils/getWeatherDetailIcon";
 import { type CurrentWeatherData } from "@/types";
 
@@ -20,7 +22,13 @@ const CurrentWeather: React.FC<CurrentWeatherData> = ({
         <div className="flex gap-x-6 mt-2">
           {details.map((detail, index) => {
             const result = getWeatherDetailIcon(detail.key, detail.value);
-            const { IconComponent, alt, unit } = result;
+              const { IconComponent, alt } = result;
+              const unit =
+                detail.key === "wind_speed"
+                  ? windSpeedUnit
+                  : detail.key === "humidity"
+                    ? "%"
+                    : undefined;
             return (
               <div key={index} className="flex flex-col items-center">
                 <IconComponent className="w-4 h-4" aria-label={alt} />

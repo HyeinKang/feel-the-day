@@ -14,14 +14,12 @@ interface IconMapEntry {
   medium?: React.ElementType;
   high?: React.ElementType;
   iconAlt: string;
-  unit?: string;
 }
 
 const iconMap: Record<string, IconMapEntry> = {
   wind_speed: {
     default: Wind,
     iconAlt: "Wind speed",
-    unit: "m/s", // metric: metre/sec, imperial: miles/hour
   },
   humidity: {
     default: Droplets,
@@ -29,7 +27,6 @@ const iconMap: Record<string, IconMapEntry> = {
     medium: Droplet,
     high: Droplets,
     iconAlt: "Humidity",
-    unit: "%",
   },
   uvi: {
     default: Sun,
@@ -55,6 +52,5 @@ export function getWeatherDetailIcon(key: string, value: number) {
   return {
     IconComponent,
     alt: entry.iconAlt,
-    unit: entry.unit,
   };
 }

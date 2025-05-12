@@ -38,8 +38,8 @@ export function formatDailyForecasts(
     dailyWeatherComparison.push({
       dayLabel: "Yesterday",
       iconUrl: `https://openweathermap.org/img/wn/${yesterday.weather[0].icon}@2x.png`,
-      temp: yesterday.temp,
-      feelsLike: yesterday.feels_like,
+      temp: Math.round(yesterday.temp),
+      feelsLike: Math.round(yesterday.feels_like),
       high: null,
       low: null,
     });
@@ -69,7 +69,7 @@ export function formatHourlyForecasts(
     timeLabel: formatTimestampToLocalTimeLabel(hour.dt),
     iconUrl: `https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`,
     weatherDescription: hour.weather[0].description,
-    temp: hour.temp,
-    feels_like: hour.feels_like,
+    temp: Math.round(hour.temp),
+    feels_like: Math.round(hour.feels_like),
   }));
 }

@@ -10,6 +10,7 @@ import {
   type TimemachineResponse,
 } from "@/types/api/weather";
 
+import { useUnit } from "@/hooks/useUnit";
 import {
   formatCurrentWeather,
   formatDailyForecasts,
@@ -35,6 +36,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   isLoading,
   error,
 }) => {
+  const { unitSystem, setUnitSystem } = useUnit();
+
   const currentWeather: CurrentWeatherData | null = useMemo(() => {
     if (!weatherData) return null;
     return formatCurrentWeather(weatherData);
