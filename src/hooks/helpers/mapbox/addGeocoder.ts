@@ -21,6 +21,12 @@ export function addGeocoder({
   const geocoder = new MapboxGeocoder({
     accessToken,
     mapboxgl: mapboxgl as unknown as typeof import("mapbox-gl"),
+    flyTo: {
+      duration: 0,
+      speed: 0,
+      curve: 0,
+      essential: true,
+    },
   });
 
   map.on("load", () => {

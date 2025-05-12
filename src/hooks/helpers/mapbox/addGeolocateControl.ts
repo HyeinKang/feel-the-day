@@ -13,7 +13,7 @@ export function addGeolocateControl({
 }: GeolocateControlProps) {
   const geolocateControl = new mapboxgl.GeolocateControl({
     positionOptions: { enableHighAccuracy: true },
-    trackUserLocation: true,
+    trackUserLocation: false,
   });
 
   map.addControl(geolocateControl, "bottom-left");
@@ -21,6 +21,11 @@ export function addGeolocateControl({
   geolocateControl.on("geolocate", (e) => {
     const lng = e.coords.longitude;
     const lat = e.coords.latitude;
+    map.stop();
+    map.jumpTo({
+      center: [lng, lat],
+      zoom: 15,
+    });
 
     setCoordinates({ lng, lat });
   });
