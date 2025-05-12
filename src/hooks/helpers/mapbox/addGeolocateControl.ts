@@ -29,4 +29,8 @@ export function addGeolocateControl({
 
     setCoordinates({ lng, lat });
   });
+
+  map.on("load", () => {
+    geolocateControl.trigger();
+  });
 }
