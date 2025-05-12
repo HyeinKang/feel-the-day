@@ -54,20 +54,20 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     return formatHourlyForecasts(weatherData);
   }, [weatherData]);
 
+  const CenteredCard: React.FC<{ children: React.ReactNode }> = ({
+    children,
+  }) => (
+    <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 bg-white p-4 rounded-xl flex items-center justify-center">
+      {children}
+    </div>
+  );
+
   if (isLoading) {
-    return (
-      <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 bg-white p-4 rounded-xl flex items-center justify-center">
-        Loading...
-      </div>
-    );
+    return <CenteredCard>Loading...</CenteredCard>;
   }
 
   if (error) {
-    return (
-      <div className="absolute top-16 bottom-16 right-10 z-10 w-1/2 bg-white p-4 rounded-xl flex items-center justify-center">
-        Failed to load weather: {error.message}
-      </div>
-    );
+    return <CenteredCard>Failed to load weather: {error.message}</CenteredCard>;
   }
 
   if (!currentWeather) {
