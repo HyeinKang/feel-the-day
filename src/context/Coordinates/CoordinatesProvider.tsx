@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { CoordinatesContext } from "@/context/Coordinates/CoordinatesContext";
+import { CoordinatesContext } from "@/context/Coordinates";
 import { reverseGeocode } from "@/api/reverseGeocode";
 import { type Coordinates } from "@/types";
 

@@ -1,4 +1,4 @@
-import { CoordinatesProvider } from "@/context/Coordinates/CoordinatesProvider";
+import { CoordinatesProvider } from "@/context/Coordinates";
 import Main from "@/pages/Main";
 
 function App() {
