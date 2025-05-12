@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { type CoordinatesContextType } from "@/context/Coordinates";
+import { type CoordinatesContextType } from "./";
 
 export const CoordinatesContext = createContext<
   CoordinatesContextType | undefined

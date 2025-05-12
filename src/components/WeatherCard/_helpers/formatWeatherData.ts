@@ -1,17 +1,16 @@
 import {
   type OneCallWeatherResponse,
   type TimemachineResponse,
-} from "@/types/api/weather";
-import {
-  type CurrentWeatherData,
-  type DailyWeatherComparisonData,
-  type HourlyForecastCardData,
-} from "@/types";
-import { formatTimestampToLocalTimeLabel } from "@/utils/formatTime";
+} from "@/types/api/openWeather";
+
+import { type CurrentWeatherType } from "../CurrentWeather";
+import { type DailyWeatherItemType } from "../DailyWeather";
+import { type HourlyForecastItemType } from "../HourlyForecast";
+import { formatTimestampToLocalTimeLabel } from "./formatTime";
 
 export function formatCurrentWeather(
   apiData: OneCallWeatherResponse,
-): CurrentWeatherData {
+): CurrentWeatherType {
   return {
     weather: apiData.current.weather,
     currentTemp: Math.round(apiData.current.temp),
@@ -34,8 +33,8 @@ export function formatCurrentWeather(
 export function formatDailyForecasts(
   apiData: OneCallWeatherResponse,
   yesterdayWeatherData: TimemachineResponse | null,
-): DailyWeatherComparisonData[] {
-  const dailyWeatherComparison: DailyWeatherComparisonData[] = [];
+): DailyWeatherItemType[] {
+  const dailyWeatherComparison: DailyWeatherItemType[] = [];
 
   // 1. If yesterday's weather data exists, format it
   if (yesterdayWeatherData && yesterdayWeatherData.data.length > 0) {
@@ -70,7 +69,7 @@ export function formatDailyForecasts(
 
 export function formatHourlyForecasts(
   apiData: OneCallWeatherResponse,
-): HourlyForecastCardData[] {
+): HourlyForecastItemType[] {
   return apiData.hourly.slice(0, 24).map((hour) => ({
     timeLabel: formatTimestampToLocalTimeLabel(hour.dt),
     iconUrl: `https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`,

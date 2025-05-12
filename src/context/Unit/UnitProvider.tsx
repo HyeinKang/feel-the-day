@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  UnitContext,
-  type TemperatureUnit,
-  type WindSpeedUnit,
-} from "@/context/Unit";
+import { type TemperatureUnit, type WindSpeedUnit } from "@/types";
+import { UnitContext } from "./";
 
 export const UnitProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

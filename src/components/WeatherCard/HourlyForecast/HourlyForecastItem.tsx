@@ -1,8 +1,9 @@
-import { type HourlyForecastCardData } from "@/types";
 import { useUnit } from "@/hooks/useUnit";
-import { formatTemperatureWithUnit } from "@/utils/formatTemperature";
 
-const HourlyForecastCard: React.FC<HourlyForecastCardData> = ({
+import { type HourlyForecastItemType } from "./";
+import { formatTemperatureWithUnit } from "../_helpers/formatTemperature";
+
+export const HourlyForecastItem: React.FC<HourlyForecastItemType> = ({
   timeLabel,
   temp,
   feels_like,
@@ -28,5 +29,3 @@ const HourlyForecastCard: React.FC<HourlyForecastCardData> = ({
     </div>
   );
 };
-
-export default HourlyForecastCard;

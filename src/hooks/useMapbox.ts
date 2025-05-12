@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
+
 import { useCoordinates } from "@/hooks/useCoordinates";
 
 import {

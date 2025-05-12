@@ -1,9 +1,9 @@
 import axios from "axios";
-import { type Coordinates } from "@/types";
+import { type Coordinates, type UnitSystem } from "@/types";
 import {
   type OneCallWeatherResponse,
   type TimemachineResponse,
-} from "@/types/api";
+} from "@/types/api/openWeather";
 
 const OPENWEATHER_API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY as string;
 
@@ -20,6 +20,7 @@ const weatherApi = axios.create({
 
 export async function fetchWeatherByCoordinates(
   coordinates: Coordinates,
+  unitSystem: UnitSystem,
   signal?: AbortSignal,
 ): Promise<OneCallWeatherResponse> {
   const { lat, lng } = coordinates;
@@ -29,7 +30,7 @@ export async function fetchWeatherByCoordinates(
       lat,
       lon: lng,
       appid: OPENWEATHER_API_KEY,
-      units: "metric",
+      units: unitSystem,
       exclude: "minutely,alerts",
     },
     signal,
@@ -40,6 +41,7 @@ export async function fetchWeatherByCoordinates(
 
 export async function fetchPastWeatherByCoordinates(
   coordinates: Coordinates,
+  unitSystem: UnitSystem,
   signal?: AbortSignal,
   dt?: number,
 ): Promise<TimemachineResponse> {
@@ -51,7 +53,7 @@ export async function fetchPastWeatherByCoordinates(
       lon: lng,
       appid: OPENWEATHER_API_KEY,
       dt: dt ?? Math.floor(Date.now() / 1000) - 86400, // 24 hours ago by default
-      units: "metric",
+      units: unitSystem,
       exclude: "minutely,alerts",
     },
     signal,

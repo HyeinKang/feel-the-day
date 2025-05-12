@@ -1,5 +1,5 @@
 import React from "react";
-import { type UnitSystem } from "@/context/Unit";
+import { type UnitSystem } from "@/types";
 
 interface TemperatureUnitSwitchProps {
   value: UnitSystem;

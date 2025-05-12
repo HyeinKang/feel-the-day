@@ -1,9 +1,10 @@
-import { type CurrentWeatherData } from "@/types";
 import { useUnit } from "@/hooks/useUnit";
-import { getWeatherDetailIcon } from "@/utils/getWeatherDetailIcon";
-import { formatTemperatureWithUnit } from "@/utils/formatTemperature";
 
-const CurrentWeather: React.FC<CurrentWeatherData> = ({
+import { type CurrentWeatherType } from "./types/currentWeather";
+import { getWeatherDetailIcon } from "../_helpers/getWeatherDetailIcon";
+import { formatTemperatureWithUnit } from "../_helpers/formatTemperature";
+
+export const CurrentWeather: React.FC<CurrentWeatherType> = ({
   weather,
   iconUrl,
   currentTemp,
@@ -71,5 +72,3 @@ const CurrentWeather: React.FC<CurrentWeatherData> = ({
     </section>
   );
 };
-
-export default CurrentWeather;

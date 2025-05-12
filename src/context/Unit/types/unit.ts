@@ -1,6 +1,8 @@
-export type UnitSystem = "metric" | "imperial";
-export type TemperatureUnit = "°C" | "°F";
-export type WindSpeedUnit = "mps" | "mph"; // meters/sec or miles/hour
+import {
+  type UnitSystem,
+  type TemperatureUnit,
+  type WindSpeedUnit,
+} from "@/types";
 
 export interface UnitContextType {
   unitSystem: UnitSystem;

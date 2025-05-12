@@ -1,4 +1,4 @@
-import { type TemperatureUnit } from "@/context/Unit/types/unit";
+import { type TemperatureUnit } from "@/types";
 
 export function formatTemperatureWithUnit(
   value: number,

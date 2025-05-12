@@ -1,8 +1,9 @@
-import { type DailyWeatherComparisonData } from "@/types";
 import { useUnit } from "@/hooks/useUnit";
-import { formatTemperatureWithUnit } from "@/utils/formatTemperature";
 
-const DailyWeatherComparisonItem: React.FC<DailyWeatherComparisonData> = ({
+import { type DailyWeatherItemType } from "./types/dailyWeather";
+import { formatTemperatureWithUnit } from "../_helpers/formatTemperature";
+
+const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
   dayLabel,
   temp,
   feelsLike,

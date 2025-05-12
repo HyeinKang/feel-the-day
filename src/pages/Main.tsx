@@ -1,13 +1,18 @@
+import { useCoordinates } from "@/hooks/useCoordinates";
+import { useWeather } from "@/hooks/useWeather";
+import { useUnit } from "@/hooks/useUnit";
+
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
-import { useWeather } from "@/hooks/useWeather";
 import LocationSearchBar from "@/components/LocationSearchBar";
-import { useCoordinates } from "@/hooks/useCoordinates";
 
 function Main() {
   const { coordinates } = useCoordinates();
-  const { weatherData, yesterdayWeatherData, isLoading, error } =
-    useWeather(coordinates);
+  const { unitSystem } = useUnit();
+  const { weatherData, yesterdayWeatherData, isLoading, error } = useWeather(
+    coordinates,
+    unitSystem,
+  );
 
   return (
     <>

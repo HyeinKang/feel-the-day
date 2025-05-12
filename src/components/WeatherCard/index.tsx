@@ -1,27 +1,22 @@
 import React, { useMemo } from "react";
+
 import { type Coordinates } from "@/types";
-import {
-  type CurrentWeatherData,
-  type DailyWeatherComparisonData,
-  type HourlyForecastCardData,
-} from "@/types";
 import {
   type OneCallWeatherResponse,
   type TimemachineResponse,
-} from "@/types/api/weather";
-
+} from "@/types/api/openWeather";
 import { useUnit } from "@/hooks/useUnit";
+import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
+
+import WeatherSummary from "./WeatherSummary";
+import { CurrentWeather, type CurrentWeatherType } from "./CurrentWeather";
+import { DailyWeather, type DailyWeatherItemType } from "./DailyWeather";
+import { HourlyForecast, type HourlyForecastItemType } from "./HourlyForecast";
 import {
   formatCurrentWeather,
   formatDailyForecasts,
   formatHourlyForecasts,
-} from "@/utils/formatWeatherData";
-import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
-
-import WeatherSummary from "./WeatherSummary";
-import CurrentWeather from "./CurrentWeather";
-import DailyWeatherComparison from "./DailyWeatherComparison";
-import HourlyForecastCard from "./HourlyForecastCard";
+} from "./_helpers/formatWeatherData";
 
 interface WeatherCardProps {
   coordinates: Coordinates;
@@ -39,17 +34,17 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 }) => {
   const { unitSystem, setUnitSystem } = useUnit();
 
-  const currentWeather: CurrentWeatherData | null = useMemo(() => {
+  const currentWeather: CurrentWeatherType | null = useMemo(() => {
     if (!weatherData) return null;
     return formatCurrentWeather(weatherData);
   }, [weatherData]);
 
-  const dailyWeatherComparison: DailyWeatherComparisonData[] = useMemo(() => {
+  const dailyWeatherComparison: DailyWeatherItemType[] = useMemo(() => {
     if (!weatherData) return [];
     return formatDailyForecasts(weatherData, yesterdayWeatherData);
   }, [weatherData, yesterdayWeatherData]);
 
-  const hourlyForecasts: HourlyForecastCardData[] = useMemo(() => {
+  const hourlyForecasts: HourlyForecastItemType[] = useMemo(() => {
     if (!weatherData) return [];
     return formatHourlyForecasts(weatherData);
   }, [weatherData]);
@@ -88,8 +83,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         details={currentWeather.details}
         today={currentWeather.today}
       />
-      <DailyWeatherComparison dailyWeatherComparison={dailyWeatherComparison} />
-      <HourlyForecastCard hourlyForecasts={hourlyForecasts} />
+      <DailyWeather dailyWeatherComparison={dailyWeatherComparison} />
+      <HourlyForecast hourlyForecasts={hourlyForecasts} />
     </div>
   );
 };

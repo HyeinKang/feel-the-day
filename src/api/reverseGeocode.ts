@@ -1,11 +1,4 @@
-interface GeocodingFeature {
-  place_type: string[];
-  text: string;
-}
-
-interface GeocodingResponse {
-  features: GeocodingFeature[];
-}
+import { type GeocodingResponse } from "@/types/api/mapbox/geocoding";
 
 export async function reverseGeocode(
   lat: number,

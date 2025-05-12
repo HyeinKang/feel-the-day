@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
+import { type Coordinates, type UnitSystem } from "@/types";
+import {
+  type OneCallWeatherResponse,
+  type TimemachineResponse,
+} from "@/types/api/openWeather";
+
 import {
   fetchWeatherByCoordinates,
   fetchPastWeatherByCoordinates,
 } from "@/api/weather";
 import { handleApiError } from "@/utils/handleApiError";
-import { type Coordinates } from "@/types";
-import {
-  type OneCallWeatherResponse,
-  type TimemachineResponse,
-} from "@/types/api/weather";
 
 interface UseWeatherReturn {
   weatherData: OneCallWeatherResponse | null;
@@ -17,7 +18,10 @@ interface UseWeatherReturn {
   error: Error | null;
 }
 
-export function useWeather(coordinates: Coordinates | null): UseWeatherReturn {
+export function useWeather(
+  coordinates: Coordinates | null,
+  unitSystem: UnitSystem,
+): UseWeatherReturn {
   const [weatherData, setWeatherData] = useState<OneCallWeatherResponse | null>(
     null,
   );
@@ -48,9 +52,14 @@ export function useWeather(coordinates: Coordinates | null): UseWeatherReturn {
 
       try {
         const [weatherResponse, yesterdayResponse] = await Promise.all([
-          fetchWeatherByCoordinates(coordinates, weatherController.signal),
+          fetchWeatherByCoordinates(
+            coordinates,
+            unitSystem,
+            weatherController.signal,
+          ),
           fetchPastWeatherByCoordinates(
             coordinates,
+            unitSystem,
             yesterdayController.signal,
             Math.floor(Date.now() / 1000) - 86400,
           ),
@@ -79,7 +88,7 @@ export function useWeather(coordinates: Coordinates | null): UseWeatherReturn {
       weatherController.abort();
       yesterdayController.abort();
     };
-  }, [coordinates]);
+  }, [coordinates, unitSystem]);
 
   return { weatherData, yesterdayWeatherData, isLoading, error };
 }

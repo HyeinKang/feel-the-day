@@ -1,13 +1,7 @@
-// Weather condition type (used in current, hourly, daily)
-interface WeatherCondition {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
+import { type WeatherCondition } from "../common";
 
 // Current weather
-interface CurrentWeather {
+export interface CurrentWeather {
   dt: number;
   sunrise: number;
   sunset: number;
@@ -26,7 +20,7 @@ interface CurrentWeather {
 }
 
 // Minutely forecast
-interface MinutelyForecast {
+export interface MinutelyForecast {
   dt: number;
   precipitation: number;
 }
@@ -90,48 +84,11 @@ export interface DailyForecast {
 }
 
 // Weather alerts
-interface WeatherAlert {
+export interface WeatherAlert {
   sender_name: string;
   event: string;
   start: number;
   end: number;
   description: string;
   tags: string[];
-}
-
-export interface OneCallWeatherResponse {
-  lat: number;
-  lon: number;
-  timezone: string;
-  timezone_offset: number;
-  current: CurrentWeather;
-  minutely?: MinutelyForecast[];
-  hourly: HourlyForecast[];
-  daily: DailyForecast[];
-  alerts?: WeatherAlert[];
-}
-
-export interface TimemachineWeatherData {
-  dt: number;
-  sunrise: number;
-  sunset: number;
-  temp: number;
-  feels_like: number;
-  pressure: number;
-  humidity: number;
-  dew_point: number;
-  uvi: number;
-  clouds: number;
-  visibility: number;
-  wind_speed: number;
-  wind_deg: number;
-  weather: WeatherCondition[];
-}
-
-export interface TimemachineResponse {
-  lat: number;
-  lon: number;
-  timezone: string;
-  timezone_offset: number;
-  data: TimemachineWeatherData[];
 }
