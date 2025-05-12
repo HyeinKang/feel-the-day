@@ -1,120 +1,74 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *));
-
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @layer base {
   :root {
-    /* Base color variables */
-    --color-background: var(--color-slate-100);          /* Main background color */
-    --color-background-muted: var(--color-slate-200);   /* Lighter background color (muted) */
-    --color-background-secondary: var(--color-slate-300); /* Slightly lighter background */
-    --color-background-accent: var(--color-slate-10); /* Slightly lighter background */
-    --color-foreground: var(--color-slate-800);          /* Text color */
-    --color-foreground-muted: var(--color-slate-600);           /* Dark mode text color */
-    --color-border: var(--color-slate-300);                   /* Border color */
-    --color-primary-foreground: var(--color-slate-10);          /* Primary text color */
-    --color-primary: var(--color-slate-500);                       /* Primary background color */
-    --color-accent: var(--color-slate-10);                      /* Dark mode accent background */
-    --color-accent-foreground: var(--color-slate-700);           /* Dark mode accent text */
+    --font-display: "Noto Sans Display", "serif"; 
 
-    --color-card: hsl(0 0% 100%);                       /* Card background */
-    --color-card-foreground: hsl(0 0% 3.9%);           /* Card text color */
-    --color-popover: hsl(0 0% 100%);                    /* Popover background */
-    --color-popover-foreground: hsl(0 0% 3.9%);        /* Popover text color */
-    --color-secondary: hsl(0 0% 96.1%);                 /* Secondary background color */
-    --color-secondary-foreground: hsl(0 0% 9%);         /* Secondary text color */
-    --color-muted: hsl(0 0% 96.1%);                    /* Muted background color */
-    --color-muted-foreground: hsl(0 0% 45.1%);         /* Muted text color */
-    --color-destructive: hsl(0 84.2% 60.2%);            /* Destructive background */
-    --color-destructive-foreground: hsl(0 0% 98%);      /* Destructive text color */
-    --color-input: hsl(0 0% 89.8%);                    /* Input field color */
-    --color-ring: hsl(0 0% 3.9%);                      /* Ring color */
-    --color-chart-1: hsl(12 76% 61%);                   /* Chart color 1 */
-    --color-chart-2: hsl(173 58% 39%);                  /* Chart color 2 */
-    --color-chart-3: hsl(197 37% 24%);                  /* Chart color 3 */
-    --color-chart-4: hsl(43 74% 66%);                   /* Chart color 4 */
-    --color-chart-5: hsl(27 87% 67%);                   /* Chart color 5 */
-    --radius: 0.5rem;                                  /* Default radius */
+    /* Light mode */
+    --background: 0 0% 100%; /* white */
+    --foreground: 240 10% 4%; /* slate-950 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --border: 240 5% 84%; /* slate-200 */
+    --input: 240 5% 96%; /* slate-100 */
+
+    --primary: 222 47% 11%; /* blue-950 */
+    --primary-foreground: 210 40% 98%; /* slate-50 */
+
+    --muted: 240 4% 95%;
+    --muted-foreground: 240 3% 46%;
+
+    --accent: 240 4% 90%;
+    --accent-foreground: 240 5% 20%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 240 5% 64%;
+    --radius: 0.5rem; /* 8px */
   }
 
-  /* Dark mode overrides */
   .dark {
-    --color-background: var(--color-slate-900);          /* Dark mode background */
-    --color-background-muted: var(--color-slate-800);    /* Dark mode muted background */
-    --color-background-secondary: var(--color-slate-700); /* Dark mode secondary background */
-    --color-foreground: var(--color-slate-200);           /* Dark mode text color */
-    --color-foreground-muted: var(--color-slate-400);           /* Dark mode text color */
-    --color-background-accent: var(--color-slate-950); /* Slightly lighter background */
-    --color-border: var(--color-slate-700);                   /* Border color */
-    --color-primary-foreground: var(--color-slate-950);          /* Primary text color */
-    --color-primary: var(--color-slate-500);                       /* Primary background color */
-    --color-accent: var(--color-slate-950);                      /* Dark mode accent background */
-    --color-accent-foreground: var(--color-slate-300);           /* Dark mode accent text */
+    /* Dark mode overrides */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 100%;
 
-    --color-card: hsl(0, 0%, 3.9%);                     /* Dark mode card background */
-    --color-card-foreground: hsl(0 0% 98%);             /* Dark mode card text color */
-    --color-popover: hsl(0 0% 3.9%);                    /* Dark mode popover background */
-    --color-popover-foreground: hsl(0 0% 98%);          /* Dark mode popover text */
-    --color-secondary: hsl(0 0% 50%);                   /* Dark mode secondary background */
-    --color-secondary-foreground: hsl(0 0% 98%);        /* Dark mode secondary text */
-    --color-muted: hsl(0 0% 50%);                      /* Dark mode muted background */
-    --color-muted-foreground: hsl(0 0% 63.9%);         /* Dark mode muted text */
-    --color-destructive: hsl(0 62.8% 30.6%);            /* Dark mode destructive background */
-    --color-destructive-foreground: hsl(0 0% 98%);      /* Dark mode destructive text */
-    --color-input: hsl(0 0% 50%);                       /* Dark mode input field color */
-    --color-ring: hsl(0 0% 83.1%);                      /* Dark mode ring color */
-    --color-chart-1: hsl(220 70% 50%);                  /* Dark mode chart color 1 */
-    --color-chart-2: hsl(160 60% 45%);                  /* Dark mode chart color 2 */
-    --color-chart-3: hsl(30 80% 55%);                   /* Dark mode chart color 3 */
-    --color-chart-4: hsl(280 65% 60%);                  /* Dark mode chart color 4 */
-    --color-chart-5: hsl(340 75% 55%);                  /* Dark mode chart color 5 */
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --border: 240 10% 25%;
+    --input: 240 10% 16%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --muted: 240 5% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 5% 25%;
+    --accent-foreground: 240 5% 85%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 5% 40%;
+  }
+
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
   }
 }
 
-/* Theme specific variables */
-@theme {
-  --color-background: var(--color-background);
-  --color-background-muted: var(--color-background-muted);
-  --color-background-secondary: var(--color-background-secondary);
-  --color-foreground: var(--color-foreground);
-  --color-foreground-muted: var(--color-foreground-muted);
-  --color-background-accent: var(--color-background-accent);
-  --color-border: var(--color-border);
-  --color-primary: var(--color-primary);
-  --color-primary-foreground: var(--color-primary-foreground);
-
-  --color-card: var(--color-card);
-  --color-card-foreground: var(--color-card-foreground);
-  --color-popover: var(--color-popover);
-  --color-popover-foreground: var(--color-popover-foreground);
-  --color-secondary: var(--color-secondary);
-  --color-secondary-foreground: var(--color-secondary-foreground);
-  --color-muted: var(--color-muted);
-  --color-muted-foreground: var(--color-muted-foreground);
-  --color-accent: var(--color-accent);
-  --color-accent-foreground: var(--color-accent-foreground);
-  --color-destructive: var(--color-destructive);
-  --color-destructive-foreground: var(--color-destructive-foreground);
-  --color-input: var(--color-input);
-  --color-ring: var(--color-ring);
-  --color-chart-1: var(--color-chart-1);
-  --color-chart-2: var(--color-chart-2);
-  --color-chart-3: var(--color-chart-3);
-  --color-chart-4: var(--color-chart-4);
-  --color-chart-5: var(--color-chart-5);
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-
-  --font-display: "Noto Sans Display", "serif"; 
-}
 
 body {
   font-family: var(--font-display);
   background-color: var(--color-background);
   color: var(--color-foreground);
   border-color: var(--color-border);
-  letter-spacing: -.36px;
 }
 
 strong {

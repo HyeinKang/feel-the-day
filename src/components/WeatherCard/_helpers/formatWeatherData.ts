@@ -67,7 +67,7 @@ export function formatDailyForecasts(
   dailyWeatherComparison.push(
     ...apiData.daily.slice(0, 3).map((day) => ({
       dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
-        weekday: "long",
+        weekday: "short",
       }),
       iconUrl: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
       iconDescription: day.weather[0].main,

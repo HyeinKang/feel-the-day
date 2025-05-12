@@ -9,7 +9,7 @@ const WeatherSummary: React.FC<WeatherSummaryProps> = ({
   overview,
   isOverviewLoading,
 }) => (
-  <section className="mt-4">
+  <section className="flex flex-col gap-y-4 items-center w-full">
     <h2 className="text-xl text-center font-medium">{locationName}</h2>
     {isOverviewLoading ? (
       <div className="animate-pulse flex-1 space-y-2 py-1">

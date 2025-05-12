@@ -36,6 +36,7 @@ export function useMapbox(
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: "mapbox://styles/mapbox/streets-v12",
+      // style: "mapbox://styles/mapbox/dark-v11",
       center: [-79.4512, 43.6568],
       zoom: 13,
     });

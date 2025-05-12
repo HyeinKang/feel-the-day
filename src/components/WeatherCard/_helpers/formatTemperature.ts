@@ -4,5 +4,5 @@ export function formatTemperatureWithUnit(
   value: number,
   unit: TemperatureUnit,
 ): string {
-  return `${value.toString()} ${unit}`;
+  return `${value.toString()}${unit}`;
 }
