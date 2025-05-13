@@ -74,5 +74,36 @@ export function useMapbox(
     locationNameRef.current = locationName;
   }, [locationName]);
 
+  useEffect(() => {
+    function handleKeyUp(e: KeyboardEvent) {
+      if (!geocoderRef.current) return;
+
+      // 1. Press `/` to focus
+      if (
+        e.key === "/" &&
+        document.activeElement?.tagName !== "INPUT" &&
+        document.activeElement?.tagName !== "TEXTAREA"
+      ) {
+        e.preventDefault();
+        const input = document.querySelector<HTMLInputElement>(
+          ".mapboxgl-ctrl-geocoder input",
+        );
+        input?.focus();
+      }
+
+      // 2. Press `Escape` to clear
+      if (e.key === "Escape") {
+        geocoderRef.current.clear();
+        setCoordinates(null); // ✅ clear coordinates
+      }
+    }
+
+    window.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [geocoderRef, setCoordinates]);
+
   return { mapRef };
 }
