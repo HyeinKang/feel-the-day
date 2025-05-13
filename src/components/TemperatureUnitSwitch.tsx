@@ -20,3 +20,5 @@ const TemperatureUnitSwitch: React.FC<TemperatureUnitSwitchProps> = ({
     }}
   />
 );
+
+export default TemperatureUnitSwitch;
