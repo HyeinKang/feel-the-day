@@ -45,7 +45,6 @@ export function useWeather(
 
   const fetchAllWeather = useCallback(
     async (showLoading = true) => {
-      console.log("called");
       if (!coordinates) return;
 
       const weatherController = new AbortController();

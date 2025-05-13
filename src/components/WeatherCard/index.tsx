@@ -1,8 +1,10 @@
 import React, { useMemo } from "react";
 
-import { useCoordinates } from "@/hooks/useCoordinates";
-import { useUnit } from "@/hooks/useUnit";
-import { useWeather } from "@/hooks/useWeather";
+import {
+  type OneCallWeatherResponse,
+  type OverviewResponse,
+  type TimemachineResponse,
+} from "@/types/api/openWeather";
 
 import WeatherSummary from "./WeatherSummary";
 import { CurrentWeather, type CurrentWeatherType } from "./CurrentWeather";
@@ -15,12 +17,19 @@ import {
   formatHourlyForecasts,
 } from "./_helpers/formatWeatherData";
 
-const WeatherCard: React.FC = () => {
-  const { coordinates } = useCoordinates();
-  const { unitSystem } = useUnit();
-  const { weatherData, overviewData, yesterdayWeatherData, isOverviewLoading } =
-    useWeather(coordinates, unitSystem);
+interface WeatherCardProps {
+  weatherData: OneCallWeatherResponse | null;
+  overviewData: OverviewResponse | null;
+  yesterdayWeatherData: TimemachineResponse | null;
+  isOverviewLoading: boolean;
+}
 
+const WeatherCard: React.FC<WeatherCardProps> = ({
+  weatherData,
+  overviewData,
+  yesterdayWeatherData,
+  isOverviewLoading,
+}) => {
   const overview: string | null = useMemo(() => {
     if (!overviewData) return null;
     return formatOverview(overviewData);

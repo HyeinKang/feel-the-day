@@ -14,10 +14,15 @@ import Loader from "@/components/ui/Loader";
 function Main() {
   const { coordinates, setCoordinates } = useCoordinates();
   const { unitSystem, setUnitSystem } = useUnit();
-  const { fetchAllWeather, isLoading, error } = useWeather(
-    coordinates,
-    unitSystem,
-  );
+  const {
+    fetchAllWeather,
+    weatherData,
+    overviewData,
+    yesterdayWeatherData,
+    isOverviewLoading,
+    isLoading,
+    error,
+  } = useWeather(coordinates, unitSystem);
 
   return (
     <>
@@ -80,7 +85,12 @@ function Main() {
                 />
               </div>
             ) : coordinates ? (
-              <WeatherCard />
+              <WeatherCard
+                weatherData={weatherData}
+                overviewData={overviewData}
+                yesterdayWeatherData={yesterdayWeatherData}
+                isOverviewLoading={isOverviewLoading}
+              />
             ) : null}
           </div>
         </main>
