@@ -8,6 +8,7 @@ import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
 import LocationSearchBar from "@/components/LocationSearchBar";
 import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
+import Loader from "@/components/ui/Loader";
 
 function Main() {
   const { coordinates, setCoordinates } = useCoordinates();
@@ -60,7 +61,7 @@ function Main() {
             </header>
             {isLoading ? (
               <div className="flex items-center justify-center pt-4 sm:pt-6">
-                Loading...
+                <Loader />
               </div>
             ) : error ? (
               <div>
