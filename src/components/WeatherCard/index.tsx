@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 
 import { useCoordinates } from "@/hooks/useCoordinates";
-import { useWeather } from "@/hooks/useWeather";
 import { useUnit } from "@/hooks/useUnit";
+import { useWeather } from "@/hooks/useWeather";
 
 import WeatherSummary from "./WeatherSummary";
 import { CurrentWeather, type CurrentWeatherType } from "./CurrentWeather";
@@ -18,14 +18,8 @@ import {
 const WeatherCard: React.FC = () => {
   const { coordinates } = useCoordinates();
   const { unitSystem } = useUnit();
-  const {
-    weatherData,
-    overviewData,
-    yesterdayWeatherData,
-    isLoading,
-    isOverviewLoading,
-    error,
-  } = useWeather(coordinates, unitSystem);
+  const { weatherData, overviewData, yesterdayWeatherData, isOverviewLoading } =
+    useWeather(coordinates, unitSystem);
 
   const overview: string | null = useMemo(() => {
     if (!overviewData) return null;
@@ -52,37 +46,25 @@ const WeatherCard: React.FC = () => {
   }
 
   return (
-    <main className="flex flex-col gap-y-8 overflow-y-auto">
-      {isLoading ? (
-        <>Loading...</>
-      ) : error ? (
-        <div>
-          <p>Failed to load weather: {error.message}</p>
-          <button type="button">Reload</button>
-        </div>
-      ) : (
-        <>
-          <hr className="sticky top-0 border-t border-gray-300" />
-          <CurrentWeather
-            weather={currentWeather.weather}
-            iconUrl={currentWeather.iconUrl}
-            currentTemp={currentWeather.currentTemp}
-            feelsLike={currentWeather.feelsLike}
-            details={currentWeather.details}
-            today={currentWeather.today}
-          />
-          <hr className="border-t border-gray-300" />
-          <WeatherSummary
-            overview={overview}
-            isOverviewLoading={isOverviewLoading}
-          />
-          <hr className="border-t border-gray-300" />
-          <DailyWeather dailyWeatherComparison={dailyWeatherComparison} />
-          <hr className="border-t border-gray-300" />
-          <HourlyForecast hourlyForecasts={hourlyForecasts} />
-        </>
-      )}
-    </main>
+    <section className="flex flex-col gap-y-8 pt-6 overflow-y-auto">
+      <CurrentWeather
+        weather={currentWeather.weather}
+        iconUrl={currentWeather.iconUrl}
+        currentTemp={currentWeather.currentTemp}
+        feelsLike={currentWeather.feelsLike}
+        details={currentWeather.details}
+        today={currentWeather.today}
+      />
+      <hr className="border-t border-gray-400" />
+      <WeatherSummary
+        overview={overview}
+        isOverviewLoading={isOverviewLoading}
+      />
+      <hr className="border-t border-gray-400" />
+      <DailyWeather dailyWeatherComparison={dailyWeatherComparison} />
+      <hr className="border-t border-gray-400" />
+      <HourlyForecast hourlyForecasts={hourlyForecasts} />
+    </section>
   );
 };
 

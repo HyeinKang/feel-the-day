@@ -2,6 +2,7 @@ import { Sun, X } from "lucide-react";
 
 import { useCoordinates } from "@/hooks/useCoordinates";
 import { useUnit } from "@/hooks/useUnit";
+import { useWeather } from "@/hooks/useWeather";
 
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
@@ -11,6 +12,7 @@ import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
 function Main() {
   const { coordinates, setCoordinates } = useCoordinates();
   const { unitSystem, setUnitSystem } = useUnit();
+  const { isLoading, error } = useWeather(coordinates, unitSystem);
 
   return (
     <>
@@ -56,7 +58,18 @@ function Main() {
                 )}
               </div>
             </header>
-            {coordinates && <WeatherCard />}
+            {isLoading ? (
+              <div className="flex items-center justify-center pt-4 sm:pt-6">
+                Loading...
+              </div>
+            ) : error ? (
+              <div>
+                <p>Failed to load weather: {error.message}</p>
+                <button type="button">Reload</button>
+              </div>
+            ) : coordinates ? (
+              <WeatherCard />
+            ) : null}
           </div>
         </main>
         <footer className="z-10 w-full bg-white p-2 text-sm text-center">
