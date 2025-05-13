@@ -1,5 +1,6 @@
 import React from "react";
 import { type UnitSystem } from "@/types";
+import Button from "@/components/ui/Button";
 
 interface TemperatureUnitSwitchProps {
   value: UnitSystem;
@@ -9,18 +10,13 @@ interface TemperatureUnitSwitchProps {
 export const TemperatureUnitSwitch: React.FC<TemperatureUnitSwitchProps> = ({
   value,
   onChange,
-}) => {
-  return (
-    <button
-      type="button"
-      className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
-      aria-label="Switch temperature unit"
-      role="switch"
-      onClick={() => {
-        onChange(value === "metric" ? "imperial" : "metric");
-      }}
-    >
-      {value === "metric" ? "View in °F" : "View in °C"}
-    </button>
-  );
-};
+}) => (
+  <Button
+    value={value === "metric" ? "View in °F" : "View in °C"}
+    role="switch"
+    ariaLabel="Switch temperature unit"
+    onClick={() => {
+      onChange(value === "metric" ? "imperial" : "metric");
+    }}
+  />
+);

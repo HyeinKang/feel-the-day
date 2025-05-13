@@ -8,12 +8,16 @@ import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
 import LocationSearchBar from "@/components/LocationSearchBar";
 import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
+import Button from "@/components/ui/Button";
 import Loader from "@/components/ui/Loader";
 
 function Main() {
   const { coordinates, setCoordinates } = useCoordinates();
   const { unitSystem, setUnitSystem } = useUnit();
-  const { isLoading, error } = useWeather(coordinates, unitSystem);
+  const { fetchAllWeather, isLoading, error } = useWeather(
+    coordinates,
+    unitSystem,
+  );
 
   return (
     <>
@@ -64,9 +68,16 @@ function Main() {
                 <Loader />
               </div>
             ) : error ? (
-              <div>
+              <div className="flex items-center justify-center pt-4 sm:pt-6">
                 <p>Failed to load weather: {error.message}</p>
-                <button type="button">Reload</button>
+                <Button
+                  value="Reload"
+                  role="button"
+                  ariaLabel="Reload the weather data"
+                  onClick={() => {
+                    void fetchAllWeather();
+                  }}
+                />
               </div>
             ) : coordinates ? (
               <WeatherCard />

@@ -14,6 +14,7 @@ import {
 import { handleApiError } from "@/utils/handleApiError";
 
 interface UseWeatherReturn {
+  fetchAllWeather: (showLoading?: boolean) => Promise<void>;
   weatherData: OneCallWeatherResponse | null;
   overviewData: OverviewResponse | null;
   yesterdayWeatherData: TimemachineResponse | null;
@@ -44,6 +45,7 @@ export function useWeather(
 
   const fetchAllWeather = useCallback(
     async (showLoading = true) => {
+      console.log("called");
       if (!coordinates) return;
 
       const weatherController = new AbortController();
@@ -143,6 +145,7 @@ export function useWeather(
   }, [fetchAllWeather]);
 
   return {
+    fetchAllWeather,
     weatherData,
     overviewData,
     yesterdayWeatherData,
