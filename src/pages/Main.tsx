@@ -7,7 +7,7 @@ import { useWeather } from "@/hooks/useWeather";
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
 import LocationSearchBar from "@/components/LocationSearchBar";
-import { TemperatureUnitSwitch } from "@/components/TemperatureUnitSwitch";
+import TemperatureUnitSwitch from "@/components/TemperatureUnitSwitch";
 import Button from "@/components/ui/Button";
 import Loader from "@/components/ui/Loader";
 

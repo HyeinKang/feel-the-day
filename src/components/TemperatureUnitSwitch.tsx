@@ -7,7 +7,7 @@ interface TemperatureUnitSwitchProps {
   onChange: (unit: UnitSystem) => void;
 }
 
-export const TemperatureUnitSwitch: React.FC<TemperatureUnitSwitchProps> = ({
+const TemperatureUnitSwitch: React.FC<TemperatureUnitSwitchProps> = ({
   value,
   onChange,
 }) => (
