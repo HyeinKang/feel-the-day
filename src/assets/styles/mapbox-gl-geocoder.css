@@ -17,17 +17,17 @@
 
 .mapboxgl-ctrl-geocoder--input {
   font: inherit;
+  font-weight: 500;
   width: 100%;
   border: 0;
   background-color: transparent;
   margin: 0;
   height: 50px;
-  color: #404040; /* fallback */
-  color: rgba(0, 0, 0, 0.75);
   padding: 6px 45px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 20px;
 }
 
 .mapboxgl-ctrl-geocoder--input::-ms-clear {
@@ -71,7 +71,7 @@
   top: calc(100% + 6px);
   z-index: 1000;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 26px;
 }
 
 .mapboxgl-ctrl-bottom-left .suggestions,

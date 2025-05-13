@@ -38,11 +38,13 @@ export const CurrentWeather: React.FC<CurrentWeatherType> = ({
             alt={[weather[0].main, weather[0].description].join(": ")}
             className="w-16 h-16"
           />
-          <p>{weather[0].main}</p>
+          <p className="font-medium">{weather[0].main}</p>
         </div>
         <div className="flex flex-col w-full">
           <h3 className="text-4xl font-medium">{currentTemperature}</h3>
-          <h3 className="text-lg">Feels like {feelsLikeTemperature}</h3>
+          <h3 className="text-lg font-medium">
+            Feels like {feelsLikeTemperature}
+          </h3>
           <h3 className="flex gap-x-3 text-sm">
             <span>High: {highTemperature}</span>
             <span>Low: {lowTemperature}</span>

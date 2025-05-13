@@ -19,11 +19,11 @@ function Main() {
       <div className="flex flex-col h-screen bg-background-primary">
         <main className="relative flex-grow">
           <Map />
-          <div className="absolute top-0 sm:top-4 right-0 sm:right-4 z-10 w-full sm:max-w-[480px] max-h-[100dvh] sm:max-h-[90dvh] flex flex-col gap-y-6 bg-[#eaeaea80] backdrop-blur-[24px] p-4 sm:p-6 rounded-xl">
-            <header className="flex flex-col gap-y-4">
+          <div className="absolute top-0 sm:top-4 right-0 sm:right-4 z-10 w-full sm:max-w-[480px] max-h-[100dvh] sm:max-h-[90dvh] flex flex-col bg-[#eaeaea80] backdrop-blur-[24px] p-4 sm:p-6 rounded-xl">
+            <header className="flex flex-col gap-y-2">
               <div className="flex items-center justify-between">
-                <h1 className="flex gap-x-2 items-center justify-start font-medium text-xl">
-                  <Sun size={28} className="text-orange-400" />
+                <h1 className="flex gap-x-2 items-center justify-start font-medium text-lg">
+                  <Sun size={20} className="text-orange-400" />
                   Feel the day
                 </h1>
                 {coordinates && (
@@ -42,7 +42,7 @@ function Main() {
                   </h2>
                 </div>
               )}
-              <div className="flex items-center gap-x-2 border-b">
+              <div className="flex items-center gap-x-2 border-b border-gray-400">
                 <LocationSearchBar />
                 {coordinates && (
                   <button

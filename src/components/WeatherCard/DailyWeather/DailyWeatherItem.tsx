@@ -35,14 +35,14 @@ const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
         alt={[iconDescription, summery].join(": ")}
         className="w-12 h-12"
       />
-      <p className="text-xl">{temperature}</p>
+      <p className="text-xl font-medium">{temperature}</p>
       <div className="text-center">
         <p className="text-sm">Feels like {feelsLikeTemperature}</p>
-        {high && low && (
-          <p className="text-sm">
-            H: {highTemperature} L: {lowTemperature}
-          </p>
-        )}
+        <p className="text-sm">
+          {highTemperature && lowTemperature
+            ? `H: ${highTemperature} L: ${lowTemperature}`
+            : "-"}
+        </p>
       </div>
     </div>
   );
