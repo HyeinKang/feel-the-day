@@ -28,7 +28,7 @@ const DailyWeatherComparisonItem: React.FC<DailyWeatherItemType> = ({
     : null;
 
   return (
-    <div className="flex flex-col gap-y-2 items-center w-1/3">
+    <div className="flex flex-col gap-y-2 items-center w-fit-content">
       <h4 className="text-sm">{dayLabel}</h4>
       <img
         src={iconUrl}

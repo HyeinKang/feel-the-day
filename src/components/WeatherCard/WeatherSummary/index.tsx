@@ -1,16 +1,13 @@
 interface WeatherSummaryProps {
-  locationName: string | null;
   overview: string | null;
   isOverviewLoading: boolean;
 }
 
 const WeatherSummary: React.FC<WeatherSummaryProps> = ({
-  locationName,
   overview,
   isOverviewLoading,
 }) => (
-  <section className="flex flex-col gap-y-4 items-center w-full">
-    <h2 className="text-xl text-center font-medium">{locationName}</h2>
+  <section className="flex flex-col items-center w-full">
     {isOverviewLoading ? (
       <div className="animate-pulse flex-1 space-y-2 py-1">
         <div className="h-2 rounded bg-gray-200" />
@@ -19,7 +16,7 @@ const WeatherSummary: React.FC<WeatherSummaryProps> = ({
         </div>
       </div>
     ) : (
-      <p className="text-sm text-center capitalize">{overview}</p>
+      <p className="text-sm capitalize">{overview}</p>
     )}
   </section>
 );

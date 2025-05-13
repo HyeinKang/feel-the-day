@@ -47,6 +47,7 @@ export function formatDailyForecasts(
   yesterdayWeatherData: TimemachineResponse | null,
 ): DailyWeatherItemType[] {
   const dailyWeatherComparison: DailyWeatherItemType[] = [];
+  const dayLabels = ["Tomorrow", "Day After Tomorrow", "Next 3 Days"];
 
   // 1. If yesterday's weather data exists, format it
   if (yesterdayWeatherData && yesterdayWeatherData.data.length > 0) {
@@ -65,10 +66,11 @@ export function formatDailyForecasts(
 
   // 2. Then format upcoming days from OneCall daily data
   dailyWeatherComparison.push(
-    ...apiData.daily.slice(0, 3).map((day) => ({
-      dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
-        weekday: "short",
-      }),
+    ...apiData.daily.slice(1, 3).map((day, index) => ({
+      // dayLabel: new Date(day.dt * 1000).toLocaleDateString(undefined, {
+      //   weekday: "short",
+      // }),
+      dayLabel: dayLabels[index],
       iconUrl: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
       iconDescription: day.weather[0].main,
       temp: Math.round(day.temp.day),
