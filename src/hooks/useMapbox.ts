@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map as MapboxMap, Marker } from "mapbox-gl";
 import { useCoordinates } from "@/hooks/useCoordinates";
+import { useTheme } from "@/hooks/useTheme";
 
 import {
   addGeocoder,
@@ -19,6 +20,7 @@ export function useMapbox(
   containerRef: React.RefObject<HTMLDivElement | null>,
 ) {
   const { locationName, coordinates, setCoordinates } = useCoordinates();
+  const { theme } = useTheme();
   const mapRef = useRef<MapboxMap | null>(null);
   const geocoderRef = useRef<MapboxGeocoder | null>(null);
   const markerRef = useRef<Marker | null>(null);
@@ -38,7 +40,6 @@ export function useMapbox(
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: "mapbox://styles/mapbox/streets-v12",
-      // style: "mapbox://styles/mapbox/dark-v11",
       center: [-79.4512, 43.6568],
       zoom: 13,
     });
@@ -104,6 +105,14 @@ export function useMapbox(
       window.removeEventListener("keyup", handleKeyUp);
     };
   }, [geocoderRef, setCoordinates]);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      mapRef.current?.setStyle("mapbox://styles/mapbox/dark-v11");
+    } else {
+      mapRef.current?.setStyle("mapbox://styles/mapbox/streets-v12");
+    }
+  }, [theme]);
 
   return { mapRef };
 }

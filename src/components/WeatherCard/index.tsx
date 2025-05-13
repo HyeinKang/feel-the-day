@@ -64,14 +64,14 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         details={currentWeather.details}
         today={currentWeather.today}
       />
-      <hr className="border-t border-gray-400" />
+      <hr className="border-t" />
       <WeatherSummary
         overview={overview}
         isOverviewLoading={isOverviewLoading}
       />
-      <hr className="border-t border-gray-400" />
+      <hr className="border-t" />
       <DailyWeather dailyWeatherComparison={dailyWeatherComparison} />
-      <hr className="border-t border-gray-400" />
+      <hr className="border-t" />
       <HourlyForecast hourlyForecasts={hourlyForecasts} />
     </section>
   );
