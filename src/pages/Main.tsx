@@ -17,7 +17,7 @@ function Main() {
       <div className="flex flex-col h-screen bg-background-primary">
         <main className="relative flex-grow">
           <Map />
-          <div className="absolute top-4 right-4 z-10 w-full md:w-1/2 max-w-[480px] max-h-[90dvh] flex flex-col gap-y-6 bg-[#eaeaea80] backdrop-blur-[24px] px-6 py-6 rounded-xl">
+          <div className="absolute top-0 sm:top-4 right-0 sm:right-4 z-10 w-full sm:max-w-[480px] max-h-[100dvh] sm:max-h-[90dvh] flex flex-col gap-y-6 bg-[#eaeaea80] backdrop-blur-[24px] p-4 sm:p-6 rounded-xl">
             <header className="flex flex-col gap-y-4">
               <div className="flex items-center justify-between">
                 <h1 className="flex gap-x-2 items-center justify-start font-medium text-xl">
@@ -32,8 +32,8 @@ function Main() {
                 )}
               </div>
               {!coordinates && (
-                <>
-                  <h2 className="">
+                <div className="hidden sm:flex flex-col gap-y-4">
+                  <h2>
                     A weather app that helps you{" "}
                     <span className="italic">feel the day</span> by comparing
                     today’s temperature to yesterday’s.
@@ -42,7 +42,7 @@ function Main() {
                   <p className="text-gray-500">
                     Click on the map or search for a location to get started.
                   </p>
-                </>
+                </div>
               )}
               <div className="flex items-center gap-x-2">
                 <LocationSearchBar />

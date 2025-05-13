@@ -49,7 +49,7 @@ export const CurrentWeather: React.FC<CurrentWeatherType> = ({
           </h3>
         </div>
       </div>
-      <div className="flex justify-center gap-x-20 mt-6">
+      <div className="flex justify-between w-full max-w-[380px] sm:max-w-[280px] mt-6 mx-auto">
         {details.map((detail, index) => {
           const result = getWeatherDetailIcon(detail.key, detail.value);
           const { IconComponent, alt } = result;
