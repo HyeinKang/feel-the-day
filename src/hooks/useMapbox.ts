@@ -11,7 +11,7 @@ import {
 } from "./helpers/mapbox";
 
 import "mapbox-gl/dist/mapbox-gl.css";
-import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import "@/assets/styles/mapbox-gl-geocoder.css";
 
 const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 

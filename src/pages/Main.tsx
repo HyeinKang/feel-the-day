@@ -38,13 +38,9 @@ function Main() {
                     <span className="italic">feel the day</span> by comparing
                     today’s temperature to yesterday’s.
                   </h2>
-                  <hr />
-                  <p className="text-gray-500">
-                    Click on the map or search for a location to get started.
-                  </p>
                 </div>
               )}
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-2 border-b">
                 <LocationSearchBar />
                 {coordinates && (
                   <button
