@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
-
+import mapboxgl, { Map as MapboxMap, Marker } from "mapbox-gl";
 import { useCoordinates } from "@/hooks/useCoordinates";
 
 import {
@@ -8,6 +7,7 @@ import {
   addGeolocateControl,
   addNavigationControl,
   addMapClickHandler,
+  addMarkerHandler,
 } from "./helpers/mapbox";
 
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -18,14 +18,16 @@ const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 export function useMapbox(
   containerRef: React.RefObject<HTMLDivElement | null>,
 ) {
-  const { setCoordinates } = useCoordinates();
+  const { locationName, coordinates, setCoordinates } = useCoordinates();
+  const mapRef = useRef<MapboxMap | null>(null);
+  const geocoderRef = useRef<MapboxGeocoder | null>(null);
+  const markerRef = useRef<Marker | null>(null);
+  const locationNameRef = useRef<string | null>(null);
 
   if (!accessToken) {
     console.error("Mapbox access token is missing.");
   }
   mapboxgl.accessToken = accessToken;
-
-  const mapRef = useRef<MapboxMap | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) {
@@ -44,7 +46,11 @@ export function useMapbox(
     mapRef.current = map;
 
     addNavigationControl(map);
-    addGeocoder({ map, accessToken, setCoordinates });
+    geocoderRef.current = addGeocoder({
+      map,
+      accessToken,
+      setCoordinates,
+    });
     addGeolocateControl({ map, setCoordinates });
     addMapClickHandler({ map, setCoordinates });
 
@@ -53,6 +59,20 @@ export function useMapbox(
       mapRef.current = null;
     };
   }, [containerRef, setCoordinates]);
+
+  useEffect(() => {
+    addMarkerHandler({ mapRef, coordinates, markerRef });
+  }, [coordinates]);
+
+  useEffect(() => {
+    if (!geocoderRef.current) return;
+    if (locationName) {
+      geocoderRef.current.setInput(locationName);
+    } else if (locationNameRef.current) {
+      geocoderRef.current.clear();
+    }
+    locationNameRef.current = locationName;
+  }, [locationName]);
 
   return { mapRef };
 }

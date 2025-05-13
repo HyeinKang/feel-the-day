@@ -5,7 +5,7 @@ import { type Coordinates } from "@/types";
 
 interface GeocoderProps {
   map: MapboxMap;
-  setCoordinates: (coordinates: Coordinates) => void;
+  setCoordinates: (coordinates: Coordinates | null) => void;
   accessToken: string;
 }
 
@@ -27,6 +27,7 @@ export function addGeocoder({
       curve: 0,
       essential: true,
     },
+    marker: false,
   });
 
   map.on("load", () => {
@@ -48,4 +49,10 @@ export function addGeocoder({
       setCoordinates({ lng, lat });
     },
   );
+
+  geocoder.on("clear", () => {
+    setCoordinates(null);
+  });
+
+  return geocoder;
 }
