@@ -10,35 +10,42 @@ We make weather-based decisions every day — but numbers alone don’t help us 
 
 ---
 
-## ✨ Key Features (Planned)
+## ✨ Key Features
 
-- 🔁 **Yesterday vs. Today Comparison**
-  Instantly see how today’s temperature and “feels like” conditions differ from yesterday.
+- 🔁 **Daily Weather Comparison**
+  Instantly compare Yesterday → Today → Tomorrow → Day After Tomorrow to sense the temperature trend across days.
 
-- 📆 **Weather Forecast**
-  View upcoming weather trends to better sense the temperature flow throughout the day.
+- 📆 **Weather Trend Forecast**
+  See today’s weather broken down hour-by-hour, adjusted to your local timezone.
 
 - 🌡️ **Actual vs. Feels Like Temperatures**
   Understand the _real_ feel of the weather, not just the raw numbers.
 
-- 📍 **Location-Based Forecasts**
-  Automatically detects your location or allows manual selection via map or search.
+- 📍 **Interactive Location Detection and Reverse Geocoding**
+  Detects your location automatically or lets you manually search/move the map, then uses Mapbox Reverse Geocoding API to display a readable city/country.
+
+- 🎹 **Keyboard Navigation and Shortcuts**
+    - Press `/` to instantly focus on the search input.
+    - Press `ESC` to close weather details or cancel searches quickly.
 
 - 🎨 **Clean, Minimal Interface**
-  Designed to be scannable at a glance — so you can feel the weather, not overanalyze it.
+  Designed for instant clarity — no clutter, just feel-based weather insights.
 
-- ♿ **Accessibility**
-  Dark/light mode and full keyboard navigation for inclusive usage.
+- ♿ **Accessibility First**
+  Dark/light mode toggle, full keyboard navigation, and semantic HTML for screen readers.
 
 - ⚙️ **User Preferences**
-  Toggle between Celsius and Fahrenheit based on your region.
+  Switch easily between Metric(Celsius, mps) and Imperial(Fahrenheit, mph) — settings are saved automatically (Local Storage).
+
+- 🔄 **Automatic Refresh**
+  Weather data refreshes every minute for live and reliable insights.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React / TypeScript
-- **API**: -
+- **API**: OpenWeatherMap (OneCall, Geocoding, Timemachine), Mapbox Reverse Geocode API (for location display)
 - **Styling**: Tailwind
 - **Build**: Vite
 
@@ -49,25 +56,19 @@ We make weather-based decisions every day — but numbers alone don’t help us 
 ```bash
 git clone https://github.com/HyeinKang/feel-the-day.git
 cd feel-the-day
+touch .env
 npm install
 npm run dev
 ```
 
 ---
 
-## 📚 API
-
-... To be filled in
-
-
----
-
 ## 🛠️ Future Expansions
 
+- 📈 Add a Graph for Weather Trends
 - 🌐 Multi-language support
 - 🌍 Save favorite locations
 - 👚 Clothing recommendations based on temperature shifts
-- 🔁 Build CI/CD pipeline
 - ✅ Add unit and integration tests
 - ⚙️ Apply SSR
 
