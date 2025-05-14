@@ -30,9 +30,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     const currentTheme = html.getAttribute("data-theme");
 
     if (currentTheme === "dark") {
-      html.setAttribute("data-theme", "light");
-    } else {
       html.setAttribute("data-theme", "dark");
+    } else {
+      html.setAttribute("data-theme", "light");
     }
   }, [theme]);
 
