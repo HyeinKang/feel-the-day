@@ -32,7 +32,7 @@ function Main() {
       <div className="flex flex-col h-screen">
         <main className="relative flex-grow">
           <Map />
-          <div className="absolute top-0 sm:top-4 right-0 sm:right-4 z-10 w-full sm:max-w-[480px] max-h-[100dvh] sm:max-h-[90dvh] flex flex-col bg-[#eaeaea80] dark:bg-[#40404080] backdrop-blur-[24px] p-4 sm:p-6 rounded-xl">
+          <div className="absolute top-0 sm:top-4 right-0 sm:right-4 z-10 w-full sm:max-w-[480px] max-h-[100dvh] sm:max-h-[90dvh] flex flex-col bg-[#eaeaea80] dark:bg-[#40404080] backdrop-blur-[24px] p-4 sm:p-6 sm:rounded-xl">
             <header className="flex flex-col gap-y-2">
               <div className="flex items-center justify-between">
                 <h1 className="flex gap-x-2 items-center justify-start font-medium text-lg">
