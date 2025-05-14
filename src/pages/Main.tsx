@@ -103,7 +103,7 @@ function Main() {
             ) : null}
           </div>
         </main>
-        <footer className="z-10 w-full dark:bg-[#242424] p-2 text-sm text-center">
+        <footer className="z-10 w-full bg-gray-50 dark:bg-[#242424] p-2 text-sm text-center">
           <p>© Feel the day, Hyein Kang</p>
         </footer>
       </div>
