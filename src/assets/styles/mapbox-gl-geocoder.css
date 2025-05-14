@@ -74,7 +74,7 @@
   top: calc(100% + 6px);
   z-index: 1000;
   overflow: hidden;
-  font-size: 26px;
+  font-size: 13px;
   &:where([data-theme=dark], [data-theme=dark] *) {
     background-color: #222;
   }
@@ -208,10 +208,6 @@
   .mapboxgl-ctrl-geocoder.mapboxgl-ctrl-geocoder--collapsed {
     width: 36px;
     min-width: 36px;
-  }
-
-  .mapboxgl-ctrl-geocoder .suggestions {
-    font-size: 13px;
   }
 
   .mapboxgl-ctrl-geocoder--icon-geolocate {
