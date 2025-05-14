@@ -26,10 +26,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   useEffect(() => {
-    const html = document.documentElement; // <html> element
-    const currentTheme = html.getAttribute("data-theme");
+    const html = document.documentElement;
 
-    if (currentTheme === "dark") {
+    if (theme === "dark") {
       html.setAttribute("data-theme", "dark");
     } else {
       html.setAttribute("data-theme", "light");
