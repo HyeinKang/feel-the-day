@@ -5,6 +5,13 @@ import { reverseGeocode } from "@/api/reverseGeocode";
 
 import { CoordinatesContext } from "./";
 
+/**
+ * CoordinatesProvider
+ *
+ * Context provider managing user's location coordinates.
+ *
+ * @param children - React children that can consume the context
+ */
 export const CoordinatesProvider = ({
   children,
 }: {
@@ -18,7 +25,7 @@ export const CoordinatesProvider = ({
       const name = await reverseGeocode(lat, lng);
       setLocationName(name ?? "Unknown location");
     } catch (err) {
-      console.error("Failed to reverse geocode:", err);
+      console.error("Failed to get location name:", err);
       setLocationName("Unknown location");
     }
   }, []);
