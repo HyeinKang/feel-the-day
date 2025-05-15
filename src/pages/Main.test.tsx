@@ -15,11 +15,6 @@ beforeAll(() => {
       matches: false,
       media: query,
       onchange: null,
-      addListener: () => {},
-      removeListener: () => {},
-      addEventListener: () => {},
-      removeEventListener: () => {},
-      dispatchEvent: () => false,
     }),
   });
 });
@@ -32,10 +27,9 @@ function SwitchWithContext() {
 
 describe("ThemeProvider + DarkModeSwitch integration", () => {
   beforeEach(() => {
-    // clear any prior theme in localStorage
     window.localStorage.clear();
-    // spy on setItem
     vi.spyOn(window.localStorage.__proto__, "setItem");
+    vi.spyOn(window.localStorage.__proto__, "getItem");
   });
 
   it("writes the new theme into localStorage when toggled", async () => {
@@ -47,23 +41,21 @@ describe("ThemeProvider + DarkModeSwitch integration", () => {
       </ThemeProvider>,
     );
 
-    // initial theme = light, so no writes yet
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(window.localStorage.setItem).not.toHaveBeenCalled();
 
-    // click to switch to dark
     const btn = screen.getByRole("switch", {
       name: /switch dark\/light mode/i,
     });
     await user.click(btn);
 
-    // wait for ThemeProvider’s effect to run
     await waitFor(() => {
-      // The html attribute itself flips
       expect(document.documentElement).toHaveAttribute("data-theme", "dark");
     });
 
-    // Now check localStorage
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(window.localStorage.setItem).toHaveBeenCalledWith("theme", "dark");
+
     expect(window.localStorage.getItem("theme")).toBe("dark");
   });
 });

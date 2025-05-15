@@ -29,5 +29,6 @@
   },
   "include": [
     "src",
+    "vitest.config.ts"
   ],
 }
