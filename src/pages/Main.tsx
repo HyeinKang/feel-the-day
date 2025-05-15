@@ -1,9 +1,9 @@
 import { Sun, X } from "lucide-react";
 
-import { useCoordinates } from "@/hooks/useCoordinates";
-import { useUnit } from "@/hooks/useUnit";
-import { useWeather } from "@/hooks/useWeather";
-import { useTheme } from "@/hooks/useTheme";
+import { useCoordinates } from "@/context/Coordinates/useCoordinates";
+import { useUnit } from "@/context/Unit/useUnit";
+import { useWeather } from "@/hooks/useWeather/useWeather";
+import { useTheme } from "@/context/Theme/useTheme";
 
 import Map from "@/components/Map";
 import WeatherCard from "@/components/WeatherCard";
