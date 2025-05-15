@@ -1,4 +1,4 @@
-import { useUnit } from "@/context/Unit/useUnit";
+import { useUnit } from "@/contexts/Unit/useUnit";
 
 import { type DailyWeatherItemType } from "./types/dailyWeather";
 import { formatTemperatureWithUnit } from "../_helpers/formatTemperature";

@@ -1,4 +1,3 @@
-// src/context/CoordinatesProvider.test.tsx
 import { useContext } from "react";
 import { describe, it, afterEach, expect, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";

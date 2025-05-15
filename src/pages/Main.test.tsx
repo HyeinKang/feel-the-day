@@ -3,8 +3,8 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import { ThemeProvider } from "@/context/Theme";
-import { useTheme } from "@/context/Theme/useTheme";
+import { ThemeProvider } from "@/contexts/Theme";
+import { useTheme } from "@/contexts/Theme/useTheme";
 import DarkModeSwitch from "@/components/DarkModeSwitch";
 
 // stub matchMedia so ThemeProvider can initialize without error

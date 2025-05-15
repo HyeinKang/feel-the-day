@@ -78,7 +78,7 @@ Remember to set up your API keys (OpenWeather, Mapbox) in `.env`.
 /src
  ├─ api/           # OpenWeather and Mapbox API wrappers
  ├─ components/    # UI components (Button, WeatherCard, etc.)
- ├─ context/       # React Context providers (Theme, Unit, Coordinates)
+ ├─ contexts/       # React Context providers (Theme, Unit, Coordinates)
  ├─ hooks/         # Custom hooks (useWeather, useMapbox helpers)
  ├─ pages/         # Main pages (Main.tsx)
  ├─ types/         # Global TypeScript types and API models
@@ -92,7 +92,7 @@ Remember to set up your API keys (OpenWeather, Mapbox) in `.env`.
 
 All components, context providers, hooks, and utilities are documented automatically using TypeDoc.
 
-- 📦 Source code organized into `/components`, `/context`, `/hooks`, `/utils`, and `/types`.
+- 📦 Source code organized into `/components`, `/contexts`, `/hooks`, `/utils`, and `/types`.
 - 📄 Full auto-generated documentation available inside the `/docs` folder.
 
 ### Quick Overview
@@ -101,7 +101,7 @@ All components, context providers, hooks, and utilities are documented automatic
 |:---|:---|:---|
 | 🧩 UI Components | `src/components/` | `Button`, `DarkModeSwitch`, `WeatherCard` |
 | 🌐 API Helpers | `src/api/` | `fetchWeatherByCoordinates`, `reverseGeocode` |
-| 📦 Context Providers | `src/context/` | `ThemeProvider`, `UnitProvider`, `CoordinatesProvider` |
+| 📦 Context Providers | `src/contexts/` | `ThemeProvider`, `UnitProvider`, `CoordinatesProvider` |
 | 🪝 Custom Hooks | `src/hooks/` | `useWeather`, `useTheme`, `useCoordinates` |
 | 🧹 Utilities | `src/utils/` | `handleApiError` |
 

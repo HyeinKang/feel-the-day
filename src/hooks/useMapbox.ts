@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import mapboxgl, { Map as MapboxMap, Marker } from "mapbox-gl";
-import { useCoordinates } from "@/context/Coordinates/useCoordinates";
-import { useTheme } from "@/context/Theme/useTheme";
+import { useCoordinates } from "@/contexts/Coordinates/useCoordinates";
+import { useTheme } from "@/contexts/Theme/useTheme";
 
 import {
   addGeocoder,
