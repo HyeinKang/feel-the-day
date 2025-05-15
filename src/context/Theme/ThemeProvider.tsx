@@ -8,22 +8,20 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const browserTheme = (): Theme => {
-    const isDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    return isDarkMode ? "dark" : "light";
+    const savedTheme = localStorage.getItem(UNIT_SYSTEM_KEY) as Theme | null;
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      return savedTheme;
+    }
+  
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
   };
-  const [theme, setThemeState] = useState<Theme>(browserTheme);
+  const [theme, setThemeState] = useState<Theme>(browserTheme());
 
   const setTheme = (theme: Theme) => {
     setThemeState(theme);
     localStorage.setItem(UNIT_SYSTEM_KEY, theme);
   };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem(UNIT_SYSTEM_KEY) as Theme | null;
-    setThemeState(savedTheme ?? browserTheme);
-  }, []);
 
   useEffect(() => {
     const html = document.documentElement;
