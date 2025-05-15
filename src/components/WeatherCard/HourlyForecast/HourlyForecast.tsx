@@ -1,7 +1,9 @@
 import { type HourlyForecastItemType } from "./";
 import { HourlyForecastItem } from "./HourlyForecastItem";
-
-interface HourlyForecastProps {
+/**
+ * Props for the HourlyForecast component.
+ */
+export interface HourlyForecastProps {
   hourlyForecasts: HourlyForecastItemType[];
 }
 

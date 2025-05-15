@@ -7,7 +7,13 @@ import {
 import { UnitContext } from "./";
 
 const UNIT_SYSTEM_KEY = "unitSystem";
-
+/**
+ * UnitProvider
+ *
+ * Context provider that allows users to select and switch between temperature and wind speed units.
+ *
+ * @param {ReactNode} children - Components wrapped by the provider
+ */
 export const UnitProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {

@@ -1,0 +1,19 @@
+{
+  "entryPoints": ["src"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**/*"
+  ],
+  "plugin": ["typedoc-plugin-markdown"],
+  "tsconfig": "tsconfig.json",
+  "name": "Feel the Day",
+  "readme": "none"
+}

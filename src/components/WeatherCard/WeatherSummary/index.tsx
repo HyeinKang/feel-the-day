@@ -1,4 +1,7 @@
-interface WeatherSummaryProps {
+/**
+ * Props for the WeatherSummary component.
+ */
+export interface WeatherSummaryProps {
   overview: string | null;
   isOverviewLoading: boolean;
 }

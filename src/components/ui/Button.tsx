@@ -1,10 +1,15 @@
-interface ButtonProps {
+/**
+ * Props for the Button component.
+ */
+export interface ButtonProps {
   value: string;
   role: string;
   ariaLabel: string;
   onClick: () => void | Promise<void>;
 }
-
+/**
+ * Reusable Button component.
+ */
 const Button: React.FC<ButtonProps> = ({ value, role, ariaLabel, onClick }) => (
   <button
     type="button"

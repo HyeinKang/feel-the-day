@@ -3,7 +3,13 @@ import { type Theme } from "@/types";
 import { ThemeContext } from "./";
 
 const UNIT_SYSTEM_KEY = "theme";
-
+/**
+ * ThemeProvider
+ *
+ * Provides the current theme context to child components.
+ *
+ * @param children - Child components that will have access to the theme context
+ */
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {

@@ -2,7 +2,11 @@
 import { Map as MapboxMap } from "mapbox-gl";
 import { type Coordinates } from "@/types";
 
-interface MapClickHandlerProps {
+/**
+ * @internal
+ * Configuration options for the addMapckClick helper.
+ */
+export interface MapClickHandlerProps {
   map: MapboxMap;
   setCoordinates: (coordinates: Coordinates) => void;
 }

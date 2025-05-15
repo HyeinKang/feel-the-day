@@ -44,7 +44,10 @@ export interface HourlyForecast {
 }
 
 // Daily forecast
-interface DailyTemperature {
+/**
+ * Daily temperature values for different times of the day.
+ */
+export interface DailyTemperature {
   day: number;
   min: number;
   max: number;
@@ -53,7 +56,10 @@ interface DailyTemperature {
   morn: number;
 }
 
-interface DailyFeelsLike {
+/**
+ * Daily feels like temperatures for different times of the day.
+ */
+export interface DailyFeelsLike {
   day: number;
   night: number;
   eve: number;

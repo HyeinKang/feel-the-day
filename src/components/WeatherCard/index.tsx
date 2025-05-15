@@ -16,14 +16,24 @@ import {
   formatDailyForecasts,
   formatHourlyForecasts,
 } from "./_helpers/formatWeatherData";
-
-interface WeatherCardProps {
+/**
+ * Props for the WeatherCard component.
+ */
+export interface WeatherCardProps {
   weatherData: OneCallWeatherResponse | null;
   overviewData: OverviewResponse | null;
   yesterdayWeatherData: TimemachineResponse | null;
   isOverviewLoading: boolean;
 }
-
+/**
+ * WeatherCard
+ *
+ * A composite component that displays current weather, daily forecasts,
+ * hourly forecasts, and a weather summary section.
+ *
+ * @param props - Props containing the weatherData object
+ * @returns JSX.Element
+ */
 const WeatherCard: React.FC<WeatherCardProps> = ({
   weatherData,
   overviewData,

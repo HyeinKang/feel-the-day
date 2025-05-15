@@ -2,7 +2,11 @@
 import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
 import { type Coordinates } from "@/types";
 
-interface GeolocateControlProps {
+/**
+ * @internal
+ * Configuration options for the addGeolocationControl helper.
+ */
+export interface GeolocateControlProps {
   map: MapboxMap;
   setCoordinates: (coordinates: Coordinates) => void;
 }

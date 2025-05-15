@@ -3,7 +3,11 @@ import mapboxgl, { Map as MapboxMap } from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { type Coordinates } from "@/types";
 
-interface GeocoderProps {
+/**
+ * @internal
+ * Configuration options for the addGeocoder helper.
+ */
+export interface GeocoderProps {
   map: MapboxMap;
   setCoordinates: (coordinates: Coordinates | null) => void;
   accessToken: string;

@@ -2,7 +2,11 @@
 import mapboxgl, { Map as MapboxMap, Marker } from "mapbox-gl";
 import { type Coordinates } from "@/types";
 
-interface MapMarkerHandlerProps {
+/**
+ * @internal
+ * Configuration options for the addMarker helper.
+ */
+export interface MapMarkerHandlerProps {
   mapRef: React.RefObject<MapboxMap | null>;
   coordinates: Coordinates | null;
   markerRef: React.RefObject<Marker | null>;

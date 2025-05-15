@@ -1,7 +1,9 @@
 import { type DailyWeatherItemType } from "./types/dailyWeather";
 import DailyWeatherItem from "./DailyWeatherItem";
-
-interface DailyWeatherProps {
+/**
+ * Props for the DailyWeather component.
+ */
+export interface DailyWeatherProps {
   dailyWeatherComparison: DailyWeatherItemType[];
 }
 
