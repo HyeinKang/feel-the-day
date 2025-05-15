@@ -1,4 +1,4 @@
-import { useUnit } from "@/hooks/useUnit";
+import { useUnit } from "@/context/Unit/useUnit";
 
 import { type CurrentWeatherType } from "./types/currentWeather";
 import { getWeatherDetailIcon } from "../_helpers/getWeatherDetailIcon";

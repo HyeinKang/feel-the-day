@@ -1,3 +1,4 @@
-export * from "./ThemeContext";
-export * from "./ThemeProvider";
-export * from "./types/theme";
+export { ThemeProvider } from "./ThemeProvider";
+export { useTheme } from "./useTheme";
+export { ThemeContext } from "./ThemeContext";
+export type { ThemeContextType } from "./types";

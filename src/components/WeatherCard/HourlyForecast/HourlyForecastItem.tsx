@@ -1,4 +1,4 @@
-import { useUnit } from "@/hooks/useUnit";
+import { useUnit } from "@/context/Unit/useUnit";
 
 import { type HourlyForecastItemType } from "./";
 import { formatTemperatureWithUnit } from "../_helpers/formatTemperature";

@@ -1,3 +1,4 @@
-export * from "./CoordinatesContext";
-export * from "./CoordinatesProvider";
-export * from "./types/coordinates";
+export { CoordinatesProvider } from "./CoordinatesProvider";
+export { useCoordinates } from "./useCoordinates";
+export { CoordinatesContext } from "./CoordinatesContext";
+export type { CoordinatesContextType } from "./types";
