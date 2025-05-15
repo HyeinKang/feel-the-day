@@ -8,7 +8,7 @@
 
 > `const` **default**: `React.FC`
 
-Defined in: [components/Map.tsx:12](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/Map.tsx#L12)
+Defined in: [components/Map.tsx:12](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/Map.tsx#L12)
 
 Map
 

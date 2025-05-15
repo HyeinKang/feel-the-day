@@ -8,4 +8,4 @@
 
 > **Theme** = `"dark"` \| `"light"`
 
-Defined in: [types/theme.ts:1](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/theme.ts#L1)
+Defined in: [types/theme.ts:1](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/theme.ts#L1)

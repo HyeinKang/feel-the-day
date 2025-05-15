@@ -6,7 +6,7 @@
 
 # Interface: HourlyForecastProps
 
-Defined in: [components/WeatherCard/HourlyForecast/HourlyForecast.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/HourlyForecast/HourlyForecast.tsx#L6)
+Defined in: [components/WeatherCard/HourlyForecast/HourlyForecast.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/HourlyForecast/HourlyForecast.tsx#L6)
 
 Props for the HourlyForecast component.
 
@@ -16,4 +16,4 @@ Props for the HourlyForecast component.
 
 > **hourlyForecasts**: [`HourlyForecastItemType`](../../types/hourlyForecast/interfaces/HourlyForecastItemType.md)[]
 
-Defined in: [components/WeatherCard/HourlyForecast/HourlyForecast.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/HourlyForecast/HourlyForecast.tsx#L7)
+Defined in: [components/WeatherCard/HourlyForecast/HourlyForecast.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/HourlyForecast/HourlyForecast.tsx#L7)

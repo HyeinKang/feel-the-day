@@ -8,7 +8,7 @@
 
 > **addMapClickHandler**(`__namedParameters`): `void`
 
-Defined in: [hooks/helpers/mapbox/addMapClickHandler.ts:14](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/hooks/helpers/mapbox/addMapClickHandler.ts#L14)
+Defined in: [hooks/helpers/mapbox/addMapClickHandler.ts:14](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/hooks/helpers/mapbox/addMapClickHandler.ts#L14)
 
 ## Parameters
 

@@ -8,7 +8,7 @@
 
 > **handleApiError**(`error`): `Error` \| `"cancel"`
 
-Defined in: [utils/handleApiError.ts:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/utils/handleApiError.ts#L8)
+Defined in: [utils/handleApiError.ts:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/utils/handleApiError.ts#L8)
 
 Centralized error handler for API-related catches.
 - Throws cancellation separately

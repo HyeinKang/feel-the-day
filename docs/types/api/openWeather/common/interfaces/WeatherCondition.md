@@ -6,7 +6,7 @@
 
 # Interface: WeatherCondition
 
-Defined in: [types/api/openWeather/common/index.ts:2](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/common/index.ts#L2)
+Defined in: [types/api/openWeather/common/index.ts:2](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/common/index.ts#L2)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/api/openWeather/common/index.ts:2](https://github.com/HyeinKa
 
 > **description**: `string`
 
-Defined in: [types/api/openWeather/common/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/common/index.ts#L5)
+Defined in: [types/api/openWeather/common/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/common/index.ts#L5)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/api/openWeather/common/index.ts:5](https://github.com/HyeinKa
 
 > **icon**: `string`
 
-Defined in: [types/api/openWeather/common/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/common/index.ts#L6)
+Defined in: [types/api/openWeather/common/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/common/index.ts#L6)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/api/openWeather/common/index.ts:6](https://github.com/HyeinKa
 
 > **id**: `number`
 
-Defined in: [types/api/openWeather/common/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/common/index.ts#L3)
+Defined in: [types/api/openWeather/common/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/common/index.ts#L3)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [types/api/openWeather/common/index.ts:3](https://github.com/HyeinKa
 
 > **main**: `string`
 
-Defined in: [types/api/openWeather/common/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/common/index.ts#L4)
+Defined in: [types/api/openWeather/common/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/common/index.ts#L4)

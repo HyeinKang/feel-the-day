@@ -6,7 +6,7 @@
 
 # Interface: DailyTemperature
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:50](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L50)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:50](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L50)
 
 Daily temperature values for different times of the day.
 
@@ -16,7 +16,7 @@ Daily temperature values for different times of the day.
 
 > **day**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:51](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L51)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:51](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L51)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:51](https://github.com
 
 > **eve**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:55](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L55)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:55](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L55)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:55](https://github.com
 
 > **max**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:53](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L53)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:53](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L53)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:53](https://github.com
 
 > **min**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:52](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L52)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:52](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L52)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:52](https://github.com
 
 > **morn**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:56](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L56)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:56](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L56)
 
 ***
 
@@ -56,4 +56,4 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:56](https://github.com
 
 > **night**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:54](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L54)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:54](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L54)

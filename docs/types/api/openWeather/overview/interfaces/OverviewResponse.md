@@ -6,7 +6,7 @@
 
 # Interface: OverviewResponse
 
-Defined in: [types/api/openWeather/overview/index.ts:1](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L1)
+Defined in: [types/api/openWeather/overview/index.ts:1](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L1)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/api/openWeather/overview/index.ts:1](https://github.com/Hyein
 
 > **date**: `string`
 
-Defined in: [types/api/openWeather/overview/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L5)
+Defined in: [types/api/openWeather/overview/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L5)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/api/openWeather/overview/index.ts:5](https://github.com/Hyein
 
 > **lat**: `number`
 
-Defined in: [types/api/openWeather/overview/index.ts:2](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L2)
+Defined in: [types/api/openWeather/overview/index.ts:2](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L2)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/api/openWeather/overview/index.ts:2](https://github.com/Hyein
 
 > **lon**: `number`
 
-Defined in: [types/api/openWeather/overview/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L3)
+Defined in: [types/api/openWeather/overview/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L3)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [types/api/openWeather/overview/index.ts:3](https://github.com/Hyein
 
 > **tz**: `string`
 
-Defined in: [types/api/openWeather/overview/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L4)
+Defined in: [types/api/openWeather/overview/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L4)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [types/api/openWeather/overview/index.ts:4](https://github.com/Hyein
 
 > **units**: `string`
 
-Defined in: [types/api/openWeather/overview/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L6)
+Defined in: [types/api/openWeather/overview/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L6)
 
 ***
 
@@ -54,4 +54,4 @@ Defined in: [types/api/openWeather/overview/index.ts:6](https://github.com/Hyein
 
 > **weather\_overview**: `string`
 
-Defined in: [types/api/openWeather/overview/index.ts:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/overview/index.ts#L7)
+Defined in: [types/api/openWeather/overview/index.ts:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/overview/index.ts#L7)

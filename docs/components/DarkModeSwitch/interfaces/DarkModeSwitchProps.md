@@ -6,7 +6,7 @@
 
 # Interface: DarkModeSwitchProps
 
-Defined in: [components/DarkModeSwitch.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/DarkModeSwitch.tsx#L7)
+Defined in: [components/DarkModeSwitch.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/DarkModeSwitch.tsx#L7)
 
 Props for the DarkModeSwitch component.
 
@@ -16,7 +16,7 @@ Props for the DarkModeSwitch component.
 
 > **onChange**: (`theme`) => `void`
 
-Defined in: [components/DarkModeSwitch.tsx:9](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/DarkModeSwitch.tsx#L9)
+Defined in: [components/DarkModeSwitch.tsx:9](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/DarkModeSwitch.tsx#L9)
 
 #### Parameters
 
@@ -34,4 +34,4 @@ Defined in: [components/DarkModeSwitch.tsx:9](https://github.com/HyeinKang/feel-
 
 > **value**: [`Theme`](../../../types/theme/type-aliases/Theme.md)
 
-Defined in: [components/DarkModeSwitch.tsx:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/DarkModeSwitch.tsx#L8)
+Defined in: [components/DarkModeSwitch.tsx:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/DarkModeSwitch.tsx#L8)

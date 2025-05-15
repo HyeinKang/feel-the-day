@@ -6,7 +6,7 @@
 
 # Interface: TimemachineResponse
 
-Defined in: [types/api/openWeather/timemachine/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L3)
+Defined in: [types/api/openWeather/timemachine/index.ts:3](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L3)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/api/openWeather/timemachine/index.ts:3](https://github.com/Hy
 
 > **data**: [`TimemachineWeatherData`](../weatherData/interfaces/TimemachineWeatherData.md)[]
 
-Defined in: [types/api/openWeather/timemachine/index.ts:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L8)
+Defined in: [types/api/openWeather/timemachine/index.ts:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L8)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/api/openWeather/timemachine/index.ts:8](https://github.com/Hy
 
 > **lat**: `number`
 
-Defined in: [types/api/openWeather/timemachine/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L4)
+Defined in: [types/api/openWeather/timemachine/index.ts:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L4)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/api/openWeather/timemachine/index.ts:4](https://github.com/Hy
 
 > **lon**: `number`
 
-Defined in: [types/api/openWeather/timemachine/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L5)
+Defined in: [types/api/openWeather/timemachine/index.ts:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L5)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [types/api/openWeather/timemachine/index.ts:5](https://github.com/Hy
 
 > **timezone**: `string`
 
-Defined in: [types/api/openWeather/timemachine/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L6)
+Defined in: [types/api/openWeather/timemachine/index.ts:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L6)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [types/api/openWeather/timemachine/index.ts:6](https://github.com/Hy
 
 > **timezone\_offset**: `number`
 
-Defined in: [types/api/openWeather/timemachine/index.ts:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/index.ts#L7)
+Defined in: [types/api/openWeather/timemachine/index.ts:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/index.ts#L7)

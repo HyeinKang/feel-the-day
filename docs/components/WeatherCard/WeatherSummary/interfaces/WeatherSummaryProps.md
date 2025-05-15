@@ -6,7 +6,7 @@
 
 # Interface: WeatherSummaryProps
 
-Defined in: [components/WeatherCard/WeatherSummary/index.tsx:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/WeatherSummary/index.tsx#L4)
+Defined in: [components/WeatherCard/WeatherSummary/index.tsx:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/WeatherSummary/index.tsx#L4)
 
 Props for the WeatherSummary component.
 
@@ -16,7 +16,7 @@ Props for the WeatherSummary component.
 
 > **isOverviewLoading**: `boolean`
 
-Defined in: [components/WeatherCard/WeatherSummary/index.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/WeatherSummary/index.tsx#L6)
+Defined in: [components/WeatherCard/WeatherSummary/index.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/WeatherSummary/index.tsx#L6)
 
 ***
 
@@ -24,4 +24,4 @@ Defined in: [components/WeatherCard/WeatherSummary/index.tsx:6](https://github.c
 
 > **overview**: `null` \| `string`
 
-Defined in: [components/WeatherCard/WeatherSummary/index.tsx:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/WeatherSummary/index.tsx#L5)
+Defined in: [components/WeatherCard/WeatherSummary/index.tsx:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/WeatherSummary/index.tsx#L5)

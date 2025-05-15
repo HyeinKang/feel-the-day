@@ -6,7 +6,7 @@
 
 # Interface: HourlyForecast
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:29](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L29)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:29](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L29)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:29](https://github.com
 
 > **clouds**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:37](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L37)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:37](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L37)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:37](https://github.com
 
 > **dew\_point**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:35](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L35)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:35](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L35)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:35](https://github.com
 
 > **dt**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:30](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L30)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:30](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L30)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:30](https://github.com
 
 > **feels\_like**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:32](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L32)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:32](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L32)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:32](https://github.com
 
 > **humidity**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:34](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L34)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:34](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L34)
 
 ***
 
@@ -54,7 +54,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:34](https://github.com
 
 > **pop**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:43](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L43)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:43](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L43)
 
 ***
 
@@ -62,7 +62,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:43](https://github.com
 
 > **pressure**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:33](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L33)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:33](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L33)
 
 ***
 
@@ -70,7 +70,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:33](https://github.com
 
 > **temp**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:31](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L31)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:31](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L31)
 
 ***
 
@@ -78,7 +78,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:31](https://github.com
 
 > **uvi**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:36](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L36)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:36](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L36)
 
 ***
 
@@ -86,7 +86,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:36](https://github.com
 
 > **visibility**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:38](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L38)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:38](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L38)
 
 ***
 
@@ -94,7 +94,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:38](https://github.com
 
 > **weather**: [`WeatherCondition`](../../../common/interfaces/WeatherCondition.md)[]
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:42](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L42)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:42](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L42)
 
 ***
 
@@ -102,7 +102,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:42](https://github.com
 
 > **wind\_deg**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:40](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L40)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:40](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L40)
 
 ***
 
@@ -110,7 +110,7 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:40](https://github.com
 
 > `optional` **wind\_gust**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:41](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L41)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:41](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L41)
 
 ***
 
@@ -118,4 +118,4 @@ Defined in: [types/api/openWeather/oneCall/weatherData.ts:41](https://github.com
 
 > **wind\_speed**: `number`
 
-Defined in: [types/api/openWeather/oneCall/weatherData.ts:39](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/oneCall/weatherData.ts#L39)
+Defined in: [types/api/openWeather/oneCall/weatherData.ts:39](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/oneCall/weatherData.ts#L39)

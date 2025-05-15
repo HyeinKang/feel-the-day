@@ -8,7 +8,7 @@
 
 > **useMapbox**(`containerRef`): `object`
 
-Defined in: [hooks/useMapbox.ts:19](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/hooks/useMapbox.ts#L19)
+Defined in: [hooks/useMapbox.ts:19](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/hooks/useMapbox.ts#L19)
 
 ## Parameters
 

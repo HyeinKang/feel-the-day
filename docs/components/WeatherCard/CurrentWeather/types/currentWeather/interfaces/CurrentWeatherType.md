@@ -6,7 +6,7 @@
 
 # Interface: CurrentWeatherType
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:1](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L1)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:1](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L1)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:1](ht
 
 > **currentTemp**: `number`
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L8)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L8)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:8](ht
 
 > **details**: `object`[]
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:10](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L10)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:10](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L10)
 
 #### key
 
@@ -38,7 +38,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:10](h
 
 > **feelsLike**: `number`
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:9](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L9)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:9](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L9)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:9](ht
 
 > **iconUrl**: `string`
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:11](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L11)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:11](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L11)
 
 ***
 
@@ -54,7 +54,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:11](h
 
 > **today**: `object`
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:12](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L12)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:12](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L12)
 
 #### temp
 
@@ -74,7 +74,7 @@ Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:12](h
 
 > **weather**: `object`[]
 
-Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:2](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L2)
+Defined in: [components/WeatherCard/CurrentWeather/types/currentWeather.ts:2](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/WeatherCard/CurrentWeather/types/currentWeather.ts#L2)
 
 #### description
 

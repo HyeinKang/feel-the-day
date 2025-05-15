@@ -8,7 +8,7 @@
 
 > **fetchOverviewByCoordinates**(`coordinates`, `unitSystem`, `signal?`): `Promise`\<[`OverviewResponse`](../../../types/api/openWeather/overview/interfaces/OverviewResponse.md)\>
 
-Defined in: [api/weather.ts:43](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/api/weather.ts#L43)
+Defined in: [api/weather.ts:43](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/api/weather.ts#L43)
 
 ## Parameters
 

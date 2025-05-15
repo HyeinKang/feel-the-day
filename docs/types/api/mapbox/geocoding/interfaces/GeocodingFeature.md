@@ -6,7 +6,7 @@
 
 # Interface: GeocodingFeature
 
-Defined in: [types/api/mapbox/geocoding.ts:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/mapbox/geocoding.ts#L4)
+Defined in: [types/api/mapbox/geocoding.ts:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/mapbox/geocoding.ts#L4)
 
 Represents a single feature result returned by the Mapbox Geocoding API.
 
@@ -16,7 +16,7 @@ Represents a single feature result returned by the Mapbox Geocoding API.
 
 > **place\_type**: `string`[]
 
-Defined in: [types/api/mapbox/geocoding.ts:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/mapbox/geocoding.ts#L5)
+Defined in: [types/api/mapbox/geocoding.ts:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/mapbox/geocoding.ts#L5)
 
 ***
 
@@ -24,4 +24,4 @@ Defined in: [types/api/mapbox/geocoding.ts:5](https://github.com/HyeinKang/feel-
 
 > **text**: `string`
 
-Defined in: [types/api/mapbox/geocoding.ts:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/mapbox/geocoding.ts#L6)
+Defined in: [types/api/mapbox/geocoding.ts:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/mapbox/geocoding.ts#L6)

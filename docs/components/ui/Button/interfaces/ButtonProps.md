@@ -6,7 +6,7 @@
 
 # Interface: ButtonProps
 
-Defined in: [components/ui/Button.tsx:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/ui/Button.tsx#L4)
+Defined in: [components/ui/Button.tsx:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/ui/Button.tsx#L4)
 
 Props for the Button component.
 
@@ -16,7 +16,7 @@ Props for the Button component.
 
 > **ariaLabel**: `string`
 
-Defined in: [components/ui/Button.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/ui/Button.tsx#L7)
+Defined in: [components/ui/Button.tsx:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/ui/Button.tsx#L7)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [components/ui/Button.tsx:7](https://github.com/HyeinKang/feel-the-d
 
 > **onClick**: () => `void` \| `Promise`\<`void`\>
 
-Defined in: [components/ui/Button.tsx:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/ui/Button.tsx#L8)
+Defined in: [components/ui/Button.tsx:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/ui/Button.tsx#L8)
 
 #### Returns
 
@@ -36,7 +36,7 @@ Defined in: [components/ui/Button.tsx:8](https://github.com/HyeinKang/feel-the-d
 
 > **role**: `string`
 
-Defined in: [components/ui/Button.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/ui/Button.tsx#L6)
+Defined in: [components/ui/Button.tsx:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/ui/Button.tsx#L6)
 
 ***
 
@@ -44,4 +44,4 @@ Defined in: [components/ui/Button.tsx:6](https://github.com/HyeinKang/feel-the-d
 
 > **value**: `string`
 
-Defined in: [components/ui/Button.tsx:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/components/ui/Button.tsx#L5)
+Defined in: [components/ui/Button.tsx:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/components/ui/Button.tsx#L5)

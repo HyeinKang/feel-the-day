@@ -6,7 +6,7 @@
 
 # Interface: TimemachineWeatherData
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:3](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L3)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:3](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L3)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:3](https://github.
 
 > **clouds**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:13](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L13)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:13](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L13)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:13](https://github
 
 > **dew\_point**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:11](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L11)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:11](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L11)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:11](https://github
 
 > **dt**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:4](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L4)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:4](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L4)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:4](https://github.
 
 > **feels\_like**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:8](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L8)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:8](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L8)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:8](https://github.
 
 > **humidity**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:10](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L10)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:10](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L10)
 
 ***
 
@@ -54,7 +54,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:10](https://github
 
 > **pressure**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:9](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L9)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:9](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L9)
 
 ***
 
@@ -62,7 +62,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:9](https://github.
 
 > **sunrise**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:5](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L5)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:5](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L5)
 
 ***
 
@@ -70,7 +70,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:5](https://github.
 
 > **sunset**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:6](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L6)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:6](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L6)
 
 ***
 
@@ -78,7 +78,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:6](https://github.
 
 > **temp**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:7](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L7)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:7](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L7)
 
 ***
 
@@ -86,7 +86,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:7](https://github.
 
 > **uvi**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:12](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L12)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:12](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L12)
 
 ***
 
@@ -94,7 +94,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:12](https://github
 
 > **visibility**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:14](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L14)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:14](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L14)
 
 ***
 
@@ -102,7 +102,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:14](https://github
 
 > **weather**: [`WeatherCondition`](../../../common/interfaces/WeatherCondition.md)[]
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:17](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L17)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:17](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L17)
 
 ***
 
@@ -110,7 +110,7 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:17](https://github
 
 > **wind\_deg**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:16](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L16)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:16](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L16)
 
 ***
 
@@ -118,4 +118,4 @@ Defined in: [types/api/openWeather/timemachine/weatherData.ts:16](https://github
 
 > **wind\_speed**: `number`
 
-Defined in: [types/api/openWeather/timemachine/weatherData.ts:15](https://github.com/HyeinKang/feel-the-day/blob/8289c79f2741a9407fd7ce6a81056ae02e4eeed7/src/types/api/openWeather/timemachine/weatherData.ts#L15)
+Defined in: [types/api/openWeather/timemachine/weatherData.ts:15](https://github.com/HyeinKang/feel-the-day/blob/6b0d3fb3bda5bce2accd42bfbaa4c5a46f07891e/src/types/api/openWeather/timemachine/weatherData.ts#L15)
