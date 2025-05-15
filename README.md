@@ -115,6 +115,7 @@ npx serve ./docs
 ```
 
 and visit `http://localhost:3000`.
+Or simply visit `https://hyeinkang.github.io/feel-the-day/`.
 
 ---
 
