@@ -1,11 +1,11 @@
 import { useCallback, useState, useEffect } from "react";
-import { type Coordinates, type UnitSystem } from "@/types";
 import {
   type OneCallWeatherResponse,
   type OverviewResponse,
   type TimemachineResponse,
 } from "@/types/api/openWeather";
-
+import { type Coordinates, type UnitSystem } from "@/types";
+import { type UseWeatherReturn } from "./types";
 import {
   fetchWeatherByCoordinates,
   fetchOverviewByCoordinates,
@@ -13,16 +13,43 @@ import {
 } from "@/api/weather";
 import { handleApiError } from "@/utils/handleApiError";
 
-interface UseWeatherReturn {
-  fetchAllWeather: (showLoading?: boolean) => Promise<void>;
-  weatherData: OneCallWeatherResponse | null;
-  overviewData: OverviewResponse | null;
-  yesterdayWeatherData: TimemachineResponse | null;
-  isLoading: boolean;
-  isOverviewLoading: boolean;
-  error: Error | null;
+export function scheduleNextMinuteFetch(cb: () => void) {
+  let timerId: number;
+
+  const schedule = () => {
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const msToNext = (60 - seconds) * 1000;
+
+    console.log(
+      `[scheduler] now=${now.toISOString()} → running in ${msToNext.toString()}ms`,
+    );
+
+    timerId = window.setTimeout(() => {
+      const firedAt = new Date();
+      console.log(`[scheduler] 🔔 fetchAllWeather @ ${firedAt.toISOString()}`);
+      cb();
+      schedule();
+    }, msToNext);
+  };
+
+  schedule();
+
+  return () => {
+    console.log(`[scheduler] clearing timer ${timerId.toString()}`);
+    clearTimeout(timerId);
+  };
 }
 
+/**
+ * useWeather
+ *
+ * Fetches and provides current, past, and overview weather data.
+ *
+ * @param coordinates - User's location coordinates
+ * @param unitSystem - 'metric' or 'imperial'
+ * @returns Weather data objects and loading/error states
+ */
 export function useWeather(
   coordinates: Coordinates | null,
   unitSystem: UnitSystem,
@@ -117,29 +144,10 @@ export function useWeather(
   }, [coordinates, unitSystem, fetchAllWeather]);
 
   useEffect(() => {
-    const scheduleNextMinuteFetch = () => {
-      let timerId: number;
-
-      const schedule = () => {
-        const now = new Date();
-        const seconds = now.getSeconds();
-        const millisecondsUntilNextMinute = (60 - seconds) * 1000;
-
-        timerId = window.setTimeout(() => {
-          void fetchAllWeather(false);
-          schedule();
-        }, millisecondsUntilNextMinute);
-      };
-
-      schedule();
-
-      return () => {
-        clearTimeout(timerId);
-      };
-    };
-
-    const cleanup = scheduleNextMinuteFetch();
-
+    // wrap your async fn so it still returns void
+    const cleanup = scheduleNextMinuteFetch(() => {
+      void fetchAllWeather(false);
+    });
     return cleanup;
   }, [fetchAllWeather]);
 
