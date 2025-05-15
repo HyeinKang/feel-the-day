@@ -1,57 +1,63 @@
 # 🌤️ Feel the Day
 
-**🚀 A weather app that helps you _feel the day_ by comparing today’s temperature to yesterday’s.**
-Instead of just number, it gives you an intuitive sense of how the day feels — so you can decide what to wear without overthinking.
+[🌐 Live Demo](https://feel-the-day.vercel.app/)
 
-We make weather-based decisions every day — but numbers alone don’t help us decide what to wear.
-“Feel the Day” closes that gap by grounding weather in personal experience. You know what yesterday felt like — now you can use that to sense today.
+> **A weather app that helps you *feel the day* — comparing today’s temperature with yesterday’s to guide daily decisions intuitively.**
 
-> You remember how yesterday felt — now you know how today compares.
+We make weather-based decisions every day — but numbers alone don’t always help.  
+**Feel the Day** grounds weather in your personal experience:  
+You know how yesterday felt — now you can sense today.
+
+---
+
+## 📋 Table of Contents
+
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Component & API Docs](#component--api-docs)
+- [Testing](#testing)
+- [Roadmap](#roadmap)
+- [License & Author](#license)
 
 ---
 
 ## ✨ Key Features
 
-- 🔁 **Daily Weather Comparison**
-  Instantly compare Yesterday → Today → Tomorrow → Day After Tomorrow to sense the temperature trend across days.
-
-- 📆 **Weather Trend Forecast**
-  See today’s weather broken down hour-by-hour, adjusted to your local timezone.
-
-- 🌡️ **Actual vs. Feels Like Temperatures**
-  Understand the _real_ feel of the weather, not just the raw numbers.
-
-- 📍 **Interactive Location Detection and Reverse Geocoding**
-  Detects your location automatically or lets you manually search/move the map, then uses Mapbox Reverse Geocoding API to display a readable city/country.
-
-- 🎹 **Keyboard Navigation and Shortcuts**
-    - Press `/` to instantly focus on the search input.
-    - Press `ESC` to close weather details or cancel searches quickly.
-
-- 🎨 **Clean, Minimal Interface**
-  Designed for instant clarity — no clutter, just feel-based weather insights.
-
-- ♿ **Accessibility First**
-  Dark/light mode toggle, full keyboard navigation, and semantic HTML for screen readers.
-
-- ⚙️ **User Preferences**
-  Switch easily between Metric(Celsius, mps) and Imperial(Fahrenheit, mph) — settings are saved automatically (Local Storage).
-
-- 🔄 **Automatic Refresh**
-  Weather data refreshes every minute for live and reliable insights.
+- 🔁 **Daily Weather Comparison**  
+  Instantly sense how Yesterday → Today → Tomorrow → Day After Tomorrow evolve.
+- 📆 **Hourly Weather Forecast**  
+  Today’s weather broken down hour-by-hour, adjusted to your timezone.
+- 🌡️ **Actual vs. Feels Like Temperatures**  
+  Understand how the weather *truly* feels, not just numbers.
+- 📍 **Interactive Location Search & Detection**  
+  Mapbox Reverse Geocoding API integrated for automatic or manual search.
+- 🎹 **Keyboard Shortcuts**  
+  - Press `/` to focus the search bar
+  - Press `ESC` to close panels
+- 🎨 **Minimal, Accessible Design**  
+  Light/dark mode, keyboard navigation, semantic HTML.
+- ⚙️ **User Preferences (Unit System)**  
+  Seamlessly switch between Metric and Imperial — preferences saved automatically.
+- 🔄 **Live Data Refresh**  
+  Weather auto-refreshes every minute.
 
 ---
 
-## 🛠️ Tech Stack
+## ⚙️ Tech Stack
 
-- **Frontend**: React / TypeScript
-- **API**: OpenWeatherMap (OneCall, Geocoding, Timemachine), Mapbox Reverse Geocode API (for location display)
-- **Styling**: Tailwind
-- **Build**: Vite
+- **Frontend**: React + TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS
+- **APIs**: OpenWeather OneCall, Mapbox Reverse Geocoding
+- **Testing**: Vitest + React Testing Library
 
 ---
 
-## 📦 Getting Started
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/HyeinKang/feel-the-day.git
@@ -61,18 +67,76 @@ npm install
 npm run dev
 ```
 
+**Note:**  
+Remember to set up your API keys (OpenWeather, Mapbox) in `.env`.
+
 ---
 
-## 🛠️ Future Expansions
+## 🗂️ Project Structure
+
+```plaintext
+/src
+ ├─ api/           # OpenWeather and Mapbox API wrappers
+ ├─ components/    # UI components (Button, WeatherCard, etc.)
+ ├─ context/       # React Context providers (Theme, Unit, Coordinates)
+ ├─ hooks/         # Custom hooks (useWeather, useMapbox helpers)
+ ├─ pages/         # Main pages (Main.tsx)
+ ├─ types/         # Global TypeScript types and API models
+ ├─ utils/         # Small utility functions (formatting, error handling)
+ └─ assets/        # Images, styles, and screenshots
+```
+
+---
+
+## 📚 Component & API Docs
+
+All components, context providers, hooks, and utilities are documented automatically using TypeDoc.
+
+- 📦 Source code organized into `/components`, `/context`, `/hooks`, `/utils`, and `/types`.
+- 📄 Full auto-generated documentation available inside the `/docs` folder.
+
+### Quick Overview
+
+| Area | Folder | Example |
+|:---|:---|:---|
+| 🧩 UI Components | `src/components/` | `Button`, `DarkModeSwitch`, `WeatherCard` |
+| 🌐 API Helpers | `src/api/` | `fetchWeatherByCoordinates`, `reverseGeocode` |
+| 📦 Context Providers | `src/context/` | `ThemeProvider`, `UnitProvider`, `CoordinatesProvider` |
+| 🪝 Custom Hooks | `src/hooks/` | `useWeather`, `useTheme`, `useCoordinates` |
+| 🧹 Utilities | `src/utils/` | `handleApiError` |
+
+### 📖 How to View Docs
+
+- Open the `/docs` folder locally
+- Or run a local static server:
+
+```bash
+npx serve ./docs
+```
+
+and visit `http://localhost:3000`.
+
+---
+
+## 🧪 Testing Overview
+
+- 🧩 **Context Providers** (CoordinatesProvider): Initialization, Success Path, Error Path, Reset
+- 🎛 **Component Unit Tests** (DarkModeSwitch): Render Variants, Click Behavior
+- ⏲ **Timer Utilities** (scheduleNextMinuteFetch): Periodic Fetching & Cleanup
+- 🔗 **Integration Tests** (ThemeProvider + DarkModeSwitch): DOM Attribute Sync, LocalStorage Persistence
+
+---
+
+## 🛣️ Roadmap
 
 - 📈 Add a Graph for Weather Trends
-- 🌐 Multi-language support
-- 🌍 Save favorite locations
-- 👚 Clothing recommendations based on temperature shifts
-- ✅ Add unit and integration tests
-- ⚙️ Apply SSR
+- 🌐 Multi-Language Support
+- 🌍 Save Favorite Locations
+- 👚 Outfit Recommendations Based on Weather
+- ⚙️ Enable SSR (Server-Side Rendering)
 
 ---
 
-## ✨ Contributor
-- **Hyein Kang (@HyeinKang)**
+## 📜 License & Author
+
+MIT License © [Hyein Kang](https://github.com/HyeinKang)
